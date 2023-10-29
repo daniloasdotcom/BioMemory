@@ -1,4 +1,5 @@
 import 'package:app_bioquimica/flashcards/constantes.dart';
+import 'package:app_bioquimica/introdution/Introdution.dart';
 import 'package:app_bioquimica/viasmetabolicas/reacao1.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class OpcoesMapaMetabolico extends StatelessWidget {
             color: Colors.black,
           ),
           centerTitle: true,
-          title: const Text("Rotas Metabólicas",
+          title: const Text("Biochemistry - subject by subject",
               style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,
@@ -49,7 +50,7 @@ class OpcoesMapaMetabolico extends StatelessWidget {
                   minimumSize: Size(100, 50),
                 ),
                 label: const Text(
-                  "Glicolise",
+                  "Glycolysis",
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,
@@ -66,7 +67,11 @@ class OpcoesMapaMetabolico extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: TextButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Introdution();
+                  }));
+                },
                 icon:
                     const Icon(Icons.circle_rounded, color: Color(0xFF2b1d0e)),
                 style: TextButton.styleFrom(
@@ -74,7 +79,7 @@ class OpcoesMapaMetabolico extends StatelessWidget {
                   minimumSize: const Size(100, 50),
                 ),
                 label: const Text(
-                  "Ciclo de Krebs",
+                  "The cell",
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,

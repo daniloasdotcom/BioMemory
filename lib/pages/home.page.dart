@@ -97,7 +97,7 @@ class HomePage extends StatelessWidget {
                   minimumSize: const Size(100, 50),
                 ),
                 label: const Text(
-                  "Metabolic Pathways",
+                  "Biochemistry - subject by subject",
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,
