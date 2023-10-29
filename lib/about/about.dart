@@ -110,12 +110,7 @@ class About extends StatelessWidget {
                           ),
                         ],
                       ),
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const FlashCards01();
-                        }));
-                      },
+                      onPressed: () {},
                     ),
                   ),
 
@@ -158,12 +153,7 @@ class About extends StatelessWidget {
                           ),
                         ],
                       ),
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const FlashCards01();
-                        }));
-                      },
+                      onPressed: () {},
                     ),
                   ),
                 ],
