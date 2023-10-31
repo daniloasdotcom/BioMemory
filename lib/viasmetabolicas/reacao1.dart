@@ -3,7 +3,6 @@ import 'package:app_bioquimica/pages/custom_rotation.dart';
 import 'package:app_bioquimica/pages/home.page.dart';
 import 'package:app_bioquimica/viasmetabolicas/reacao2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../pages/custom_page_route.dart';
 

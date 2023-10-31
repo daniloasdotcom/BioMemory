@@ -19,39 +19,43 @@ class _IntrodutionState extends State<Introdution> {
   bool mostrarBotaoProximaSecao04 = false;
 
   // Função para rolar a página para a Seção 2
+
   void _scrollToSection2() {
     setState(() {
       showSection2 = true;
     });
+
     _scrollController.animateTo(
-      MediaQuery.of(context).size.height, // Altura da tela
-      duration: Duration(seconds: 1),
+      MediaQuery.of(context)
+          .size
+          .height, // Rolando para o início da próxima seção
+      duration: Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
   }
 
-  // Função para rolar a página para a Seção 3
   void _scrollToSection3() {
     setState(() {
       showSection3 = true;
     });
+
     _scrollController.animateTo(
       MediaQuery.of(context).size.height *
-          2, // Altura da tela multiplicada por 2
-      duration: Duration(seconds: 1),
+          2, // Rolando para o início da próxima seção
+      duration: Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
   }
 
-  // Função para rolar a página para a Seção 4
   void _scrollToSection4() {
     setState(() {
       showSection4 = true;
     });
+
     _scrollController.animateTo(
       MediaQuery.of(context).size.height *
-          3, // Altura da tela multiplicada por 3
-      duration: Duration(seconds: 1),
+          3, // Rolando para o início da próxima seção
+      duration: Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
   }
@@ -111,171 +115,199 @@ class _IntrodutionState extends State<Introdution> {
           )
         ],
       ),
-      body: SingleChildScrollView(
+      body: ListView(
         controller: _scrollController,
-        child: Column(
-          children: <Widget>[
-
-            // Seção 1
-            Container(
-              margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-              height: MediaQuery.of(context).size.height, // Altura da tela
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text('There are two main types of cells: prokaryotic cells and eukaryotic cells. Prokaryotic cells are generally smaller and simpler, while eukaryotic cells are larger and more complex',
-                        style: TextStyle(
-                            fontFamily: 'Merriweather',
-                            fontSize: 14,
-                            height: 2.0,
-                            color: Colors.white),
-                        textAlign: TextAlign.justify),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    PerguntaComAlternativas01(
-                      onRespostaCorreta: () {
-                        _mostrarBotaoProximaSecao02();
-                      },
-                    ),
-                    if (mostrarBotaoProximaSecao02)
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary:
-                              Color(0xFFa7e2dd), // Cor de fundo personalizada
-                        ),
-                        onPressed: () {
-                          if (!showSection2) {
-                            _scrollToSection2();
-                          }
+        children: [
+          Column(
+            children: <Widget>[
+              // Seção 1
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                //height: MediaQuery.of(context).size.height, // Altura da tela
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                          'There are two main types of cells: prokaryotic cells and eukaryotic cells. Prokaryotic cells are generally smaller and simpler, while eukaryotic cells are larger and more complex',
+                          style: TextStyle(
+                              fontFamily: 'Merriweather',
+                              fontSize: 14,
+                              height: 2.0,
+                              color: Colors.white),
+                          textAlign: TextAlign.justify),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      PerguntaComAlternativas01(
+                        onRespostaCorreta: () {
+                          _mostrarBotaoProximaSecao02();
                         },
-                        child: Text('Next...',
+                      ),
+                      if (mostrarBotaoProximaSecao02)
+                        Column(
+                          children: [
+                            Container(
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                        'This is because the main difference between prokaryotic and eukaryotic cells lies in their complexity. Prokaryotic cells are generally simpler, lacking a true nucleus and many membrane-bound organelles, while eukaryotic cells are more complex, containing a nucleus and various membrane-bound organelles that compartmentalize different cellular functions. Understanding this distinction is fundamental in the study of cell biology.',
+                                        style: TextStyle(
+                                            fontFamily: 'Merriweather',
+                                            fontSize: 14,
+                                            height: 2.0,
+                                            color: Colors.white),
+                                        textAlign: TextAlign.justify),
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Color(
+                                    0xFFa7e2dd), // Cor de fundo personalizada
+                              ),
+                              onPressed: () {
+                                if (!showSection2) {
+                                  _scrollToSection2();
+                                }
+                              },
+                              child: Text('Next...',
+                                  style: TextStyle(
+                                      fontFamily: 'Merriweather',
+                                      fontSize: 14,
+                                      height: 1.5,
+                                      color: Color(0xFF46171b)),
+                                  textAlign: TextAlign.justify),
+                            ),
+                          ],
+                        )
+                    ],
+                  ),
+                ),
+              ),
+
+              // Seção 2
+              if (showSection2)
+                Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                  height: MediaQuery.of(context).size.height, // Altura da tela
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                            'Cells contain various structures and organelles that perform specific functions. Some of the most important cellular components include the nucleus, plasma membrane, cytoplasm, and mitochondria.',
                             style: TextStyle(
                                 fontFamily: 'Merriweather',
                                 fontSize: 14,
-                                height: 1.5,
-                                color: Color(0xFF46171b)),
+                                height: 2.0,
+                                color: Colors.white),
                             textAlign: TextAlign.justify),
-                      ),
-                  ],
-                ),
-              ),
-            ),
-
-            // Seção 2
-            if (showSection2)
-              Container(
-                margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                height: MediaQuery.of(context).size.height, // Altura da tela
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Cells contain various structures and organelles that perform specific functions. Some of the most important cellular components include the nucleus, plasma membrane, cytoplasm, and mitochondria.',
-                          style: TextStyle(
-                              fontFamily: 'Merriweather',
-                              fontSize: 14,
-                              height: 2.0,
-                              color: Colors.white),
-                          textAlign: TextAlign.justify),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      PerguntaComAlternativas02(
-                        onRespostaCorreta: () {
-                          _mostrarBotaoProximaSecao03();
-                        },
-                      ),
-                      if (mostrarBotaoProximaSecao03)
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
-                          ),
-                          onPressed: () {
-                            if (!showSection3) {
-                              _scrollToSection3();
-                            }
-                          },
-                          child: Text('Next...',
-                              style: TextStyle(
-                                  fontFamily: 'Merriweather',
-                                  fontSize: 14,
-                                  height: 1.5,
-                                  color: Color(0xFF46171b)),
-                              textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
                         ),
-                    ],
+                        PerguntaComAlternativas02(
+                          onRespostaCorreta: () {
+                            _mostrarBotaoProximaSecao03();
+                          },
+                        ),
+                        if (mostrarBotaoProximaSecao03)
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(
+                                  0xFFa7e2dd), // Cor de fundo personalizada
+                            ),
+                            onPressed: () {
+                              if (!showSection3) {
+                                _scrollToSection3();
+                              }
+                            },
+                            child: Text('Next...',
+                                style: TextStyle(
+                                    fontFamily: 'Merriweather',
+                                    fontSize: 14,
+                                    height: 1.5,
+                                    color: Color(0xFF46171b)),
+                                textAlign: TextAlign.justify),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
 
-            // Seção 3
-            if (showSection3)
-              Container(
-                margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                height: MediaQuery.of(context).size.height, // Altura da tela
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Cellular metabolism is the set of chemical reactions that occur in a cell to maintain life. This includes protein synthesis, energy production and regulation of chemical balance.',
-                          style: TextStyle(
-                              fontFamily: 'Merriweather',
-                              fontSize: 14,
-                              height: 2.0,
-                              color: Colors.white),
-                          textAlign: TextAlign.justify),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      PerguntaComAlternativas03(
-                        onRespostaCorreta: () {
-                          _mostrarBotaoProximaSecao04();
-                        },
-                      ),
-                      if (mostrarBotaoProximaSecao04)
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
-                          ),
-                          onPressed: () {
-                            if (!showSection4) {
-                              _scrollToSection4();
-                            }
-                          },
-                          child: Text('Next...',
-                              style: TextStyle(
-                                  fontFamily: 'Merriweather',
-                                  fontSize: 14,
-                                  height: 1.5,
-                                  color: Color(0xFF46171b)),
-                              textAlign: TextAlign.justify),
+              // Seção 3
+              if (showSection3)
+                Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                  height: MediaQuery.of(context).size.height, // Altura da tela
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                            'Cellular metabolism is the set of chemical reactions that occur in a cell to maintain life. This includes protein synthesis, energy production and regulation of chemical balance.',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
                         ),
-                    ],
+                        PerguntaComAlternativas03(
+                          onRespostaCorreta: () {
+                            _mostrarBotaoProximaSecao04();
+                          },
+                        ),
+                        if (mostrarBotaoProximaSecao04)
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(
+                                  0xFFa7e2dd), // Cor de fundo personalizada
+                            ),
+                            onPressed: () {
+                              if (!showSection4) {
+                                _scrollToSection4();
+                              }
+                            },
+                            child: Text('Next...',
+                                style: TextStyle(
+                                    fontFamily: 'Merriweather',
+                                    fontSize: 14,
+                                    height: 1.5,
+                                    color: Color(0xFF46171b)),
+                                textAlign: TextAlign.justify),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
 
-            // Seção 4
-            if (showSection4)
-              Container(
-                margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                height: MediaQuery.of(context).size.height, // Altura da tela
-                child: Center(
-                  child: Text('Seção 04',
-                      style: TextStyle(
-                          fontFamily: 'Merriweather',
-                          fontSize: 14,
-                          height: 1.5,
-                          color: Colors.white),
-                      textAlign: TextAlign.justify),
+              // Seção 4
+              if (showSection4)
+                Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                  height: MediaQuery.of(context).size.height, // Altura da tela
+                  child: Center(
+                    child: Text('Seção 04',
+                        style: TextStyle(
+                            fontFamily: 'Merriweather',
+                            fontSize: 14,
+                            height: 1.5,
+                            color: Colors.white),
+                        textAlign: TextAlign.justify),
+                  ),
                 ),
-              ),
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -296,7 +328,7 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
   String mensagemResposta = '';
 
   void verificarResposta() {
-    if (respostaSelecionada == 3) {
+    if (respostaSelecionada == 2) {
       mensagemResposta = 'Right answer';
       widget.onRespostaCorreta();
     } else {
@@ -322,7 +354,8 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
       padding: EdgeInsets.all(16.0),
       child: Column(
         children: [
-          Text('What is the main difference between prokaryotic and eukaryotic cells?',
+          Text(
+              'What is the main difference between prokaryotic and eukaryotic cells?',
               style: TextStyle(
                 fontFamily: 'Merriweather',
                 fontSize: 14,
@@ -554,7 +587,8 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
       padding: EdgeInsets.all(16.0),
       child: Column(
         children: [
-          Text('Which organelle plays a crucial role in energy production in a cell?',
+          Text(
+              'Which organelle plays a crucial role in energy production in a cell?',
               style: TextStyle(
                 fontFamily: 'Merriweather',
                 fontSize: 14,
@@ -626,5 +660,73 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
         ],
       ),
     );
+  }
+}
+
+class CommentSection01 extends StatefulWidget {
+  const CommentSection01({Key? key}) : super(key: key);
+
+  @override
+  State<CommentSection01> createState() => _CommentSection01State();
+}
+
+class _CommentSection01State extends State<CommentSection01> {
+  final ScrollController _scrollController = ScrollController();
+
+  bool showSection2 = true; // Variável para controlar a exibição da Seção 2
+
+  void _scrollToSection2() {
+    setState(() {
+      showSection2 = true;
+    });
+    _scrollController.animateTo(
+      MediaQuery.of(context).size.height, // Altura da tela
+      duration: Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      Container(
+        margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                  'There are two main types of cells: prokaryotic cells and eukaryotic cells. Prokaryotic cells are generally smaller and simpler, while eukaryotic cells are larger and more complex',
+                  style: TextStyle(
+                      fontFamily: 'Merriweather',
+                      fontSize: 14,
+                      height: 2.0,
+                      color: Colors.white),
+                  textAlign: TextAlign.justify),
+              SizedBox(
+                height: 30,
+              ),
+            ],
+          ),
+        ),
+      ),
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: Color(0xFFa7e2dd), // Cor de fundo personalizada
+        ),
+        onPressed: () {
+          if (!showSection2) {
+            _scrollToSection2();
+          }
+        },
+        child: Text('Next...',
+            style: TextStyle(
+                fontFamily: 'Merriweather',
+                fontSize: 14,
+                height: 1.5,
+                color: Color(0xFF46171b)),
+            textAlign: TextAlign.justify),
+      ),
+    ]);
   }
 }

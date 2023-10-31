@@ -3,10 +3,9 @@ import 'package:app_bioquimica/pages/custom_page_route.dart';
 import 'package:app_bioquimica/pages/custom_rotation.dart';
 import 'package:app_bioquimica/pages/home.page.dart';
 import 'package:app_bioquimica/viasmetabolicas/reacao1.dart';
-import 'package:app_bioquimica/viasmetabolicas/reacao3.dart';
 import 'package:app_bioquimica/viasmetabolicas/reacao8.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 // ignore: use_key_in_widget_constructors
 class Reacao7 extends StatelessWidget {

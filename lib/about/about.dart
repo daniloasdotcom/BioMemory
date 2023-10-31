@@ -1,5 +1,4 @@
 import 'package:app_bioquimica/flashcards/constantes.dart';
-import 'package:app_bioquimica/flashcards/flashcards.aula.01.dart';
 import 'package:app_bioquimica/pages/home.page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
