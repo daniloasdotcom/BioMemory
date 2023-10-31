@@ -13,6 +13,10 @@ class _IntrodutionState extends State<Introdution> {
   bool showSection2 = false; // Variável para controlar a exibição da Seção 2
   bool showSection3 = false; // Variável para controlar a exibição da Seção 3
   bool showSection4 = false; // Variável para controlar a exibição da Seção 4
+  
+  List<double> sectionHeights = [0.0, 0.0, 0.0];
+  int currentSection = 0;
+  
   bool respostaCorreta = false;
   bool mostrarBotaoProximaSecao02 = false;
   bool mostrarBotaoProximaSecao03 = false;
@@ -28,7 +32,7 @@ class _IntrodutionState extends State<Introdution> {
     _scrollController.animateTo(
       MediaQuery.of(context)
           .size
-          .height, // Rolando para o início da próxima seção
+          .height * 1.35, // Rolando para o início da próxima seção
       duration: Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
@@ -41,7 +45,7 @@ class _IntrodutionState extends State<Introdution> {
 
     _scrollController.animateTo(
       MediaQuery.of(context).size.height *
-          2, // Rolando para o início da próxima seção
+          2.35, // Rolando para o início da próxima seção
       duration: Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
@@ -147,6 +151,7 @@ class _IntrodutionState extends State<Introdution> {
                       if (mostrarBotaoProximaSecao02)
                         Column(
                           children: [
+                            SizedBox(height: 20,),
                             Container(
                               child: Center(
                                 child: Column(
@@ -185,6 +190,7 @@ class _IntrodutionState extends State<Introdution> {
                                       color: Color(0xFF46171b)),
                                   textAlign: TextAlign.justify),
                             ),
+                            SizedBox(height: 20,),
                           ],
                         )
                     ],

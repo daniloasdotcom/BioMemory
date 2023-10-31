@@ -73,6 +73,11 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   assets:
+    - assets/images/lipidios/lipidios.png
+    - assets/images/lipidios/oils.jpg
+    - assets/images/lipidios/oil_water.jpg
+    - assets/images/lipidios/fosfolipidio.png
+    - assets/images/lipidios/acidos_graxos.png
     - assets/images/primeiro.png
     - assets/images/segunda.png
     - assets/images/1.png
