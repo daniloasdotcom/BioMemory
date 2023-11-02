@@ -8,58 +8,67 @@ class FlashCardsOpcoes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF46171b),
+      backgroundColor: const Color(0xFF2E4650),
       appBar: AppBar(
-          iconTheme: const IconThemeData(
-            color: Colors.black,
-          ),
-          centerTitle: true,
-          title: const Text(
-            "Flash Cards",
-            style: TextStyle(
-                fontFamily: 'Merriweather',
-                fontSize: 15,
-                color: Color(0xFF2b1d0e)),
-          ),
-          backgroundColor: const Color(0xFFa7e2dd),
-          toolbarHeight: 80,
-          elevation: 5,
-          shadowColor: mainColor,
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(
-                Icons.home,
-                color: Colors.black,
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.dashboard,
+              color: Color(0xFFE58E57),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            const Text("FlashCards",
+                style: TextStyle(
+                    fontFamily: 'Merriweather',
+                    fontSize: 18,
+                    color: Colors.white)),
+          ],
+        ),
+        backgroundColor: const Color(0xFF2E4D59),
+        toolbarHeight: 80,
+        elevation: 0,
+        shadowColor: mainColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return HomePage();
+              }));
+            },
+          )
+        ],
+      ),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                    'assets/images/fundo03.jpg'), // Substitua pelo caminho da sua imagem
+                fit: BoxFit.cover,
               ),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return HomePage();
-                }));
-              },
-            )
-          ],
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-      body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomLeft,
-          stops: [
-            0.1,
-            0.4,
-            0.6,
-            0.9,
-          ],
-          colors: [
-            Color(0xFF29060A),
-            Color(0xff3E0B10),
-            Color(0xFF480C14),
-            Color(0xFF50121D),
-          ],
-        )),
-        child: ListView(
-          children: <Widget>[
+            ),
+            foregroundDecoration: BoxDecoration(
+              color: Color.fromRGBO(43, 70, 80, 0.6),
+            ),
+          ),
+          SingleChildScrollView(
+              child: Column(children: [
+            SizedBox(
+              height: 20,
+            ),
             Container(
               alignment: Alignment.topLeft,
               margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
@@ -93,17 +102,18 @@ class FlashCardsOpcoes extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.8),
                       borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black),
                       boxShadow: const [
                         BoxShadow(
-                            color: Colors.brown,
+                            color: Color.fromRGBO(0, 0, 0, 1.0),
                             blurRadius: 5,
                             spreadRadius: 1,
-                            offset: Offset(4, 4)),
+                            offset: Offset(5, 5)),
                       ],
                     ),
                     child: TextButton(
                       child: const Text(
-                        'Grupos de Móleculas Orgânicas',
+                        'Conceitos\nTurma BL01',
                         style: TextStyle(
                             fontFamily: 'Merriweather',
                             fontSize: 16,
@@ -112,10 +122,29 @@ class FlashCardsOpcoes extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const FlashCards01();
-                        }));
+                        Navigator.of(context).push(
+                          PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) {
+                              return FlashCards01();
+                            },
+                            transitionsBuilder: (context, animation,
+                                secondaryAnimation, child) {
+                              const begin = Offset(1.0, 0.0);
+                              const end = Offset.zero;
+                              const curve = Curves.ease;
+                              var tween = Tween(begin: begin, end: end)
+                                  .chain(CurveTween(curve: curve));
+                              var offsetAnimation = animation.drive(tween);
+
+                              return SlideTransition(
+                                position: offsetAnimation,
+                                child: child,
+                              );
+                            },
+                            transitionDuration: Duration(milliseconds: 1500),
+                          ),
+                        );
                       },
                     ),
                   ),
@@ -128,34 +157,38 @@ class FlashCardsOpcoes extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.8),
                       borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black),
                       boxShadow: const [
                         BoxShadow(
-                            color: Colors.brown,
+                            color: Color.fromRGBO(0, 0, 0, 1.0),
                             blurRadius: 5,
                             spreadRadius: 1,
-                            offset: Offset(4, 4)),
+                            offset: Offset(5, 5)),
                       ],
                     ),
                     child: TextButton(
-                    child: const Text(
-                      'Conceitos: Metabolismos',
-                      style: TextStyle(
-                          fontFamily: 'Merriweather',
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF2b1d0e)),
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const FlashCards02();
-                      }));
-                    },
+                      child: const Text(
+                        'Conceitos: Metabolismos',
+                        style: TextStyle(
+                            fontFamily: 'Merriweather',
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF2b1d0e)),
+                        textAlign: TextAlign.center,
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const FlashCards02();
+                        }));
+                      },
                     ),
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 40,
             ),
             Container(
               margin: const EdgeInsets.only(left: 20, right: 20),
@@ -170,12 +203,13 @@ class FlashCardsOpcoes extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.8),
                       borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black),
                       boxShadow: const [
                         BoxShadow(
-                            color: Colors.brown,
+                            color: Color.fromRGBO(0, 0, 0, 1.0),
                             blurRadius: 5,
                             spreadRadius: 1,
-                            offset: Offset(4, 4)),
+                            offset: Offset(5, 5)),
                       ],
                     ),
                     child: TextButton(
@@ -200,38 +234,33 @@ class FlashCardsOpcoes extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.8),
                       borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black),
                       boxShadow: const [
                         BoxShadow(
-                            color: Colors.brown,
+                            color: Color.fromRGBO(0, 0, 0, 1.0),
                             blurRadius: 5,
                             spreadRadius: 1,
-                            offset: Offset(4, 4)),
+                            offset: Offset(5, 5)),
                       ],
                     ),
                     child: TextButton(
-                    child: const Text(
-                      'Via das pentoses fosfato',
-                      style: TextStyle(
-                          fontFamily: 'Merriweather',
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF2b1d0e)),
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: () {},
+                      child: const Text(
+                        'Via das pentoses fosfato',
+                        style: TextStyle(
+                            fontFamily: 'Merriweather',
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF2b1d0e)),
+                        textAlign: TextAlign.center,
+                      ),
+                      onPressed: () {},
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-          ],
-        ),
+          ]))
+        ],
       ),
     );
   }

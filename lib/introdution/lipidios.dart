@@ -129,31 +129,37 @@ class _LipidiosState extends State<Lipidios> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF46171b),
+      backgroundColor: const Color(0xFF2E4650),
       appBar: AppBar(
         iconTheme: const IconThemeData(
-          color: Colors.black,
+          color: Colors.white,
         ),
-        automaticallyImplyLeading: false,
         centerTitle: true,
-        title: Text(
-          "Introdução aos Lipídios",
-          style: TextStyle(
-              fontFamily: 'Merriweather',
-              fontSize: 20,
-              color: Color(0xFF2b1d0e)),
-          textAlign: TextAlign.center,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.book_outlined,
+              color: Color(0xFFE58E57),
+            ),
+            SizedBox(width: 20,),
+            const Text("Lipídios",
+                style: TextStyle(
+                    fontFamily: 'Merriweather',
+                    fontSize: 18,
+                    color: Colors.white)),
+          ],
         ),
-        backgroundColor: const Color(0xFFa7e2dd),
+        backgroundColor: const Color(0xFF2E4D59),
         toolbarHeight: 80,
-        elevation: 5,
+        elevation: 0,
         shadowColor: mainColor,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
         actions: <Widget>[
           IconButton(
             icon: const Icon(
               Icons.home,
-              color: Colors.black,
+              color: Colors.white,
             ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -427,8 +433,14 @@ class _LipidiosState extends State<Lipidios> {
                         SizedBox(
                           height: 30,
                         ),
-                        Image.asset('assets/images/lipidios/lipidios.png',
-                            fit: BoxFit.cover, width: double.infinity),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Ajuste o raio conforme necessário
+                          child: Image.asset(
+                              'assets/images/lipidios/lipidios.png',
+                              fit: BoxFit.cover,
+                              width: double.infinity),
+                        ),
                         SizedBox(
                           height: 30,
                         ),
@@ -636,7 +648,7 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
         borderRadius: BorderRadius.circular(10),
         boxShadow: const [
           BoxShadow(
-              color: Colors.brown,
+              color: Color(0xFFE58E57),
               blurRadius: 5,
               spreadRadius: 1,
               offset: Offset(4, 4)),
@@ -754,7 +766,7 @@ class _PerguntaComAlternativas02State extends State<PerguntaComAlternativas02> {
         borderRadius: BorderRadius.circular(10),
         boxShadow: const [
           BoxShadow(
-              color: Colors.brown,
+              color: Color(0xFFE58E57),
               blurRadius: 5,
               spreadRadius: 1,
               offset: Offset(4, 4)),
@@ -870,7 +882,7 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
         borderRadius: BorderRadius.circular(10),
         boxShadow: const [
           BoxShadow(
-              color: Colors.brown,
+              color: Color(0xFFE58E57),
               blurRadius: 5,
               spreadRadius: 1,
               offset: Offset(4, 4)),
@@ -987,7 +999,7 @@ class _PerguntaComAlternativas04State extends State<PerguntaComAlternativas04> {
         borderRadius: BorderRadius.circular(10),
         boxShadow: const [
           BoxShadow(
-              color: Colors.brown,
+              color: Color(0xFFE58E57),
               blurRadius: 5,
               spreadRadius: 1,
               offset: Offset(4, 4)),

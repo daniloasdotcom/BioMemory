@@ -1,6 +1,6 @@
 import 'package:app_bioquimica/about/about.dart';
-import 'package:app_bioquimica/flashcards/constantes.dart';
 import 'package:app_bioquimica/flashcards/flashcards.opcoes.dart';
+import 'package:app_bioquimica/introdution/study.guided.dart';
 import 'package:app_bioquimica/viasmetabolicas/mapa.metabolico.choice.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -9,142 +9,238 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF46171b),
-      appBar: AppBar(
-          iconTheme: const IconThemeData(
-            color: Colors.black,
-          ),
-          automaticallyImplyLeading: false,
-          centerTitle: true,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                FontAwesomeIcons.dna,
-                size: 40,
-                color: Color(0xFF2b1d0e),
-              ),
-              Icon(
-                Icons.add,
-                size: 20,
-                color: Color(0xFF2b1d0e),
-              ),
-              Icon(
-                FontAwesomeIcons.brain,
-                size: 40,
-                color: Color(0xFF2b1d0e),
-              ),
-            ],
-          ),
-          backgroundColor: const Color(0xFFa7e2dd),
-          toolbarHeight: 80,
-          elevation: 5,
-          shadowColor: mainColor,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+      backgroundColor: const Color(0xFF2E4650),
       body: Center(
         child: ListView(
           children: [
-            const SizedBox(height: 20),
-
-            // Elemento de Ícones
-            Text(
-              "Bio Memory",
-              style: TextStyle(
-                  fontFamily: 'Merriweather',
-                  fontSize: 30,
-                  color: Colors.white),
-              textAlign: TextAlign.center,
-            ),
-
-            const SizedBox(height: 20),
-
-            Container(
-              margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-              child: Column(
-                children: [
-                  Text(
-                    "Your Biochemistry app completely based on cognitive learning science",
-                    style: TextStyle(
-                        fontFamily: 'Merriweather',
-                        fontSize: 14,
-                        height: 1.5,
-                        color: Colors.white),
-                    textAlign: TextAlign.center,
+            Stack(children: [
+              Container(
+                padding:
+                    EdgeInsets.only(left: 40, right: 40, top: 100, bottom: 100),
+                margin: const EdgeInsets.only(bottom: 10),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'assets/images/fundo01.jpg'), // Replace with your image path
+                    fit: BoxFit.cover, // You can adjust the fit as needed
                   ),
-                ],
+                ),
+                foregroundDecoration: BoxDecoration(
+                  color: Color.fromRGBO(43, 70, 80, 0.6),
+                ),
               ),
-            ),
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 40),
+                child: Column(
+                  children: [
+                    Text(
+                      "Bio Memory",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 30,
+                          color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text(
+                      "Your Biochemistry app completely based on cognitive learning science",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 13,
+                          height: 1.5,
+                          color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ]),
 
-            const SizedBox(height: 40),
+            const SizedBox(height: 60),
 
-            // Botão de acesso às rotas metabólicas
+            Container(
+              margin: const EdgeInsets.only(left: 40, right: 40),
+              child: Divider(
+                color: Colors.white, // Define a cor da linha
+                thickness: 0.5, // Define a espessura da linha (opcional)
+              ),
+            ), // Botão de acesso às rotas metabólicas
             Container(
               margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
               decoration: BoxDecoration(
-                color: const Color(0xFFa7e2dd),
+                color: const Color(0xFF2E4650),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: TextButton.icon(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return OpcoesMapaMetabolico();
-                  }));
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return EstudoGuiado();
+                      },
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(1.0, 0.0);
+                        const end = Offset.zero;
+                        const curve = Curves.ease;
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
+                        var offsetAnimation = animation.drive(tween);
+
+                        return SlideTransition(
+                          position: offsetAnimation,
+                          child: child,
+                        );
+                      },
+                      transitionDuration: Duration(seconds: 2),
+                    ),
+                  );
                 },
-                icon: const Icon(Icons.device_hub, color: Color(0xFF2b1d0e)),
+                icon: const Icon(
+                  Icons.book_outlined,
+                  color: Color(0xFFE58E57),
+                ),
                 style: TextButton.styleFrom(
                   alignment: Alignment.centerLeft,
                   minimumSize: const Size(100, 50),
                 ),
                 label: const Text(
-                  "Biochemistry - subject by subject",
+                  "Guided Study",
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,
-                      color: Color(0xFF2b1d0e)),
+                      color: Colors.white),
                   textAlign: TextAlign.left,
                 ),
               ),
             ),
-
-            const SizedBox(height: 20),
-
             Container(
-              margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+              margin: const EdgeInsets.only(left: 40, right: 40),
+              child: Divider(
+                color: Colors.white, // Define a cor da linha
+                thickness: 0.5, // Define a espessura da linha (opcional)
+              ),
+            ), // Botão de acesso às rotas metabólicas
+            Container(
+              margin: const EdgeInsets.only(left: 40, right: 40),
               decoration: BoxDecoration(
-                color: const Color(0xFFa7e2dd),
+                color: const Color(0xFF2E4650),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: TextButton.icon(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return FlashCardsOpcoes();
-                  }));
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return OpcoesMapaMetabolico();
+                      },
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(1.0, 0.0);
+                        const end = Offset.zero;
+                        const curve = Curves.ease;
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
+                        var offsetAnimation = animation.drive(tween);
+
+                        return SlideTransition(
+                          position: offsetAnimation,
+                          child: child,
+                        );
+                      },
+                      transitionDuration: Duration(milliseconds: 1500),
+                    ),
+                  );
                 },
-                icon: const Icon(Icons.dashboard, color: Color(0xFF2b1d0e)),
+                icon: const Icon(
+                  Icons.device_hub,
+                  color: Color(0xFFE58E57),
+                ),
                 style: TextButton.styleFrom(
                   alignment: Alignment.centerLeft,
                   minimumSize: const Size(100, 50),
                 ),
                 label: const Text(
-                  "Flash Cards",
+                  "Metabolic Pathways",
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,
-                      color: Color(0xFF2b1d0e)),
+                      color: Colors.white),
                   textAlign: TextAlign.left,
                 ),
               ),
             ),
-            
-            const SizedBox(height: 20),
 
+            Container(
+              margin: const EdgeInsets.only(left: 40, right: 40),
+              child: Divider(
+                color: Colors.white, // Define a cor da linha
+                thickness: 0.5, // Define a espessura da linha (opcional)
+              ),
+            ),
+                        Container(
+              margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+              decoration: BoxDecoration(
+                color: const Color(0xFF2E4650),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: TextButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return FlashCardsOpcoes();
+                      },
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(1.0, 0.0);
+                        const end = Offset.zero;
+                        const curve = Curves.ease;
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
+                        var offsetAnimation = animation.drive(tween);
 
+                        return SlideTransition(
+                          position: offsetAnimation,
+                          child: child,
+                        );
+                      },
+                      transitionDuration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+                icon: const Icon(
+                  Icons.dashboard,
+                  color: Color(0xFFE58E57),
+                ),
+                style: TextButton.styleFrom(
+                  alignment: Alignment.centerLeft,
+                  minimumSize: const Size(100, 50),
+                ),
+                label: const Text(
+                  "FlashCards",
+                  style: TextStyle(
+                      fontFamily: 'Merriweather',
+                      fontSize: 12,
+                      color: Colors.white),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+            ),
             // Botão de Acesso à Página de About
             Container(
-              margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+              margin: const EdgeInsets.only(left: 40, right: 40),
+              child: Divider(
+                color: Colors.white, // Define a cor da linha
+                thickness: 0.5, // Define a espessura da linha (opcional)
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 40, right: 40),
               decoration: BoxDecoration(
-                color: const Color(0xFFa7e2dd),
+                color: const Color(0xFF2E4650),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: TextButton.icon(
@@ -153,7 +249,8 @@ class HomePage extends StatelessWidget {
                     return About();
                   }));
                 },
-                icon: const Icon(FontAwesomeIcons.rocket, color: Color(0xFF2b1d0e)),
+                icon: const Icon(FontAwesomeIcons.rocket,
+                    color: Color(0xFFE58E57)),
                 style: TextButton.styleFrom(
                   alignment: Alignment.centerLeft,
                   minimumSize: const Size(100, 50),
@@ -163,14 +260,23 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,
-                      color: Color(0xFF2b1d0e)),
+                      color: Colors.white),
                   textAlign: TextAlign.left,
                 ),
               ),
             ),
+        
+            
+            Container(
+              margin: const EdgeInsets.only(left: 40, right: 40),
+              child: Divider(
+                color: Colors.white, // Define a cor da linha
+                thickness: 0.5, // Define a espessura da linha (opcional)
+              ),
+            ),
             const SizedBox(height: 40),
             Container(
-              margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+              margin: const EdgeInsets.only(left: 40, right: 40),
               child: Column(
                 children: [
                   Text(
@@ -187,7 +293,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+              margin: const EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 children: [
                   Text(

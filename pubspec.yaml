@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flip_card: ^0.6.0
+  flip_card: ^0.7.0
   flutter_svg: ^1.0.3
   font_awesome_flutter: ^9.2.0
 
@@ -78,7 +78,13 @@ flutter:
     - assets/images/lipidios/oil_water.jpg
     - assets/images/lipidios/fosfolipidio.png
     - assets/images/lipidios/acidos_graxos.png
+    - assets/images/gliconeogenese/Slide1.png
+    - assets/images/gliconeogenese/Slide2.png
+    - assets/images/gliconeogenese/Slide3.png
     - assets/images/primeiro.png
+    - assets/images/fundo01.jpg
+    - assets/images/fundo02.jpg
+    - assets/images/fundo03.jpg
     - assets/images/segunda.png
     - assets/images/1.png
     - assets/images/2.png
