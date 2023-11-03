@@ -1,5 +1,5 @@
 import 'package:app_bioquimica/flashcards/constantes.dart';
-import 'package:app_bioquimica/introdution/teste.dart';
+import 'package:app_bioquimica/viasmetabolicas/gliconeogese.dart';
 import 'package:app_bioquimica/pages/home.page.dart';
 import 'package:flutter/material.dart';
 
