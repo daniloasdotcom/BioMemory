@@ -1,11 +1,16 @@
+import 'dart:ffi';
+
 import 'package:app_bioquimica/about/about.dart';
 import 'package:app_bioquimica/flashcards/flashcards.opcoes.dart';
 import 'package:app_bioquimica/introdution/study.guided.dart';
 import 'package:app_bioquimica/viasmetabolicas/mapa.metabolico.choice.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
+  final Uri _url = Uri.parse(
+      'https://github.com/daniloasdotcom/BioMemory/blob/main/Pol%C3%ADtica%20de%20Privacidade%20Aplicativo.pdf');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +63,7 @@ class HomePage extends StatelessWidget {
               ),
             ]),
 
-            const SizedBox(height: 60),
+            const SizedBox(height: 30),
 
             Container(
               margin: const EdgeInsets.only(left: 40, right: 40),
@@ -180,7 +185,7 @@ class HomePage extends StatelessWidget {
                 thickness: 0.5, // Define a espessura da linha (opcional)
               ),
             ),
-                        Container(
+            Container(
               margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
               decoration: BoxDecoration(
                 color: const Color(0xFF2E4650),
@@ -265,8 +270,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-        
-            
+
             Container(
               margin: const EdgeInsets.only(left: 40, right: 40),
               child: Divider(
@@ -308,9 +312,33 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 20,),
+            InkWell(
+              onTap: () {
+                _launchUrl();
+              },
+              child: Text(
+                "Politica de Privacidade",
+                style: TextStyle(
+                    fontFamily: 'Merriweather',
+                    fontSize: 14,
+                    fontStyle: FontStyle.italic,
+                    height: 1.5,
+                    decoration: TextDecoration.underline,
+                    decorationThickness: 2.0,
+                    color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
   }
 }
