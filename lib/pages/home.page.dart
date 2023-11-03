@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                       height: 40,
                     ),
                     Text(
-                      "Seu aplicativo de estudo de bioquímica completamente baseado em ciência cognitiva de aprendizagem",
+                      "Seu aplicativo de estudo de bioquímica, completamente baseado em ciência cognitiva de aprendizagem",
                       style: TextStyle(
                           fontFamily: 'Merriweather',
                           fontSize: 13,

@@ -7,36 +7,38 @@ class CardsAula02 {
 
 List<CardsAula02> quesAnsList02 = [
   CardsAula02(
-      question: "Área que está muito ligada à bioquímica e que estuda as transformações de energia nos seres vivos. Estuda os processos metabólicos celulares, isto é, as reações químicas realizadas pelas células, que envolvem consumo ou produção de energia a partir de um combustível orgânico",
-      answer: "Bioenergética "),
+    question: "Conceito:\n\nGlicólise",
+    answer:
+        "A glicólise é a via metabólica que ocorre no citoplasma das células e envolve a quebra da glicose em duas moléculas de piruvato, produzindo ATP e NADH no processo.",
+  ),
   CardsAula02(
-      question: "Metabolismo",
-      answer: "Nome dado ao conjunto das reações químicas que ocorrem num organismo vivo com o fim de promover a satisfação de necessidades estruturais e energéticas"),
+    question: "Conceito:\n\nCiclo de Krebs",
+    answer:
+        "O ciclo de Krebs é uma via metabólica que ocorre na mitocôndria e completa a oxidação do piruvato, produzindo ATP, NADH, FADH2 e CO2 como produtos finais.",
+  ),
   CardsAula02(
-      question: "Anabolismo",
-      answer: "Fase metabólica em que as unidades fundamentais são reunidas para formar as macromoléculas componentes das células, como as proteínas, DNA etc.."),
+    question: "Conceito:\n\nCadeia Transportadora de Elétrons",
+    answer:
+        "A cadeia transportadora de elétrons é uma série de complexos proteicos na membrana interna da mitocôndria que transfere elétrons de NADH e FADH2 para o oxigênio, gerando ATP por meio da fosforilação oxidativa.",
+  ),
   CardsAula02(
-      question:
-          "Bioenergética",
-      answer:
-          "Área que está muito ligada à bioquímica e que estuda as transformações de energia nos seres vivos. Estuda os processos metabólicos celulares, isto é, as reações químicas realizadas pelas células, que envolvem consumo ou produção de energia a partir de um combustível orgânico"),
+    question: "Conceito:\n\nQuimiosmose",
+    answer:
+        "A quimiosmose é o processo pelo qual prótons (íons de hidrogênio) são bombeados através da membrana mitocondrial interna durante a cadeia transportadora de elétrons e, em seguida, fluem de volta através da ATP sintase para produzir ATP.",
+  ),
   CardsAula02(
-      question:
-          "Fase metabólica em que as unidades fundamentais são reunidas para formar as macromoléculas componentes das células, como as proteínas, DNA etc..",
-      answer: "Anabolismo"),
+    question: "Conceito:\n\nGliconeogênese",
+    answer:
+        "A gliconeogênese é uma via metabólica que ocorre no fígado e nos rins e envolve a síntese de glicose a partir de precursores não glicídicos, como lactato, aminoácidos e glicerol, durante períodos de jejum ou baixa glicose sanguínea.",
+  ),
   CardsAula02(
-      question: "Fase degradativa do metabolismo; nela, as moléculas orgânicas, nutrientes, carboidratos, lipídios e proteínas provenientes do ambiente ou dos reservatórios de nutrientes da própria célula são degradados por reações consecutivas em produtos finais menores e mais simples",
-      answer: "Catabolismo"),
+    question: "Conceito:\n\nGlicogenólise",
+    answer:
+        "A glicogenólise é a quebra do glicogênio, uma forma de armazenamento de glicose, em unidades de glicose para liberar energia e elevar os níveis de glicose no sangue quando necessário.",
+  ),
   CardsAula02(
-      question: "Rota metabólica ou Via metabólica",
-      answer: "Série de reações químicas conectadas que alimentam uma a outra."),
-  CardsAula02(
-      question: "Nome dado ao conjunto das reações químicas que ocorrem num organismo vivo com o fim de promover a satisfação de necessidades estruturais e energéticas",
-      answer: "Metabolismo"),
-  CardsAula02(
-      question: "Catabolismo",
-      answer: "Fase degradativa do metabolismo; nela, as moléculas orgânicas, nutrientes, carboidratos, lipídios e proteínas provenientes do ambiente ou dos reservatórios de nutrientes da própria célula são degradados por reações consecutivas em produtos finais menores e mais simples"),
-  CardsAula02(
-      question: "Série de reações químicas conectadas que alimentam uma a outra.",
-      answer: "Rota metabólica ou Via metabólica"),
+    question: "Conceito:\n\nGlicogênese",
+    answer:
+        "A glicogênese é a síntese de glicogênio a partir de glicose ou outros precursores e ocorre principalmente no fígado e nos músculos esqueléticos para armazenar glicose como uma forma de reserva de energia.",
+  ),
 ];

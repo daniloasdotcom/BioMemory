@@ -1,5 +1,6 @@
 import 'package:app_bioquimica/flashcards/cards.aula.02.dart';
 import 'package:app_bioquimica/flashcards/constantes.dart';
+
 import 'package:app_bioquimica/flashcards/reuso.cards.dart';
 import 'package:app_bioquimica/pages/home.page.dart';
 import 'package:flip_card/flip_card.dart';
@@ -15,34 +16,51 @@ class FlashCards02 extends StatefulWidget {
 
 class _FlashCards02State extends State<FlashCards02> {
   int _currentIndexNumber = 0;
+  int _totalCards = 7; // Número total de cartões
   double _initial = 0.1;
+
+  // Adicione uma chave global para o FlipCard
+  GlobalKey<FlipCardState> flipCardKey = GlobalKey<FlipCardState>();
 
   @override
   Widget build(BuildContext context) {
-    String value = (_initial * 10).toStringAsFixed(0);
+    String value = (_currentIndexNumber + 1)
+        .toString(); // Atualize o valor baseado no índice atual
+    double progress = (_currentIndexNumber + 1) / _totalCards;
     return Scaffold(
-        backgroundColor: const Color(0xFF46171b),
+        backgroundColor: const Color(0xFF2E4650),
         appBar: AppBar(
           iconTheme: const IconThemeData(
-            color: Colors.black,
+            color: Colors.white,
           ),
           centerTitle: true,
-          title: const Text("Conceitos: Metabolismo",
-              style: TextStyle(
-                  fontFamily: 'Merriweather',
-                  fontSize: 15,
-                  color: Colors.black)),
-          backgroundColor: const Color(0xFFa7e2dd),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.dashboard,
+                color: Color(0xFFE58E57),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              const Text("Turma BB1/BB2",
+                  style: TextStyle(
+                      fontFamily: 'Merriweather',
+                      fontSize: 18,
+                      color: Colors.white)),
+            ],
+          ),
+          backgroundColor: const Color(0xFF2E4D59),
           toolbarHeight: 80,
-          elevation: 5,
+          elevation: 0,
           shadowColor: mainColor,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
           actions: <Widget>[
             IconButton(
               icon: const Icon(
                 Icons.home,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -56,8 +74,24 @@ class _FlashCards02State extends State<FlashCards02> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+              Text("Toque para virar o cartão",
+                  style: TextStyle(
+                      fontFamily: 'Merriweather',
+                      fontSize: 15,
+                      color: Colors.white)),
+              SizedBox(
+                  width: 300,
+                  height: 300,
+                  child: FlipCard(
+                      key: flipCardKey, // Defina a chave global para o FlipCard
+                      direction: FlipDirection.HORIZONTAL,
+                      front: ReusableCard(
+                        text: quesAnsList02[_currentIndexNumber].question,
+                      ),
+                      back: ReusableCard(
+                          text: quesAnsList02[_currentIndexNumber].answer))),
               Text(
-                "Cartão $value de 10",
+                "Cartão $value de $_totalCards",
                 style: const TextStyle(
                     fontFamily: 'Merriweather',
                     fontSize: 15,
@@ -68,27 +102,11 @@ class _FlashCards02State extends State<FlashCards02> {
                 padding: const EdgeInsets.all(10.0),
                 child: LinearProgressIndicator(
                   backgroundColor: Colors.white,
-                  valueColor: const AlwaysStoppedAnimation(Color(0xFFa7e2dd)),
+                  valueColor: const AlwaysStoppedAnimation(Color(0xFFE58E57)),
                   minHeight: 10,
-                  value: _initial,
+                  value: progress, // Use o valor de progresso calculado
                 ),
               ),
-              const SizedBox(height: 25),
-              SizedBox(
-                  width: 300,
-                  height: 300,
-                  child: FlipCard(
-                      direction: FlipDirection.VERTICAL,
-                      front: ReusableCard(
-                        text: quesAnsList02[_currentIndexNumber].question,
-                      ),
-                      back: ReusableCard(
-                          text: quesAnsList02[_currentIndexNumber].answer))),
-              const Text("Toque para ver a resposta",
-                  style: TextStyle(
-                      fontFamily: 'Merriweather',
-                      fontSize: 13,
-                      color: Colors.white)),
               const SizedBox(height: 20),
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -105,7 +123,7 @@ class _FlashCards02State extends State<FlashCards02> {
                         ),
                         label: const Text(""),
                         style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFa7e2dd),
+                            primary: const Color(0xFFF2D6BD),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             padding: const EdgeInsets.only(
@@ -120,9 +138,9 @@ class _FlashCards02State extends State<FlashCards02> {
                           size: 30,
                           color: Colors.black,
                         ),
-                        label: Text(""),
+                        label: const Text(""),
                         style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFa7e2dd),
+                            primary: const Color(0xFFF2D6BD),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             padding: const EdgeInsets.only(
@@ -134,7 +152,7 @@ class _FlashCards02State extends State<FlashCards02> {
   void updateToNext() {
     setState(() {
       _initial = _initial + 0.1;
-      if (_initial > 1.0) {
+      if (_initial > 0.8) {
         _initial = 0.1;
       }
     });
@@ -144,7 +162,7 @@ class _FlashCards02State extends State<FlashCards02> {
     setState(() {
       _initial = _initial - 0.1;
       if (_initial < 0.1) {
-        _initial = 1.0;
+        _initial = 0.8;
       }
     });
   }
@@ -154,6 +172,9 @@ class _FlashCards02State extends State<FlashCards02> {
       _currentIndexNumber = (_currentIndexNumber + 1 < quesAnsList02.length)
           ? _currentIndexNumber + 1
           : 0;
+
+      // Defina a chave do FlipCard como uma nova chave para recriá-lo
+      flipCardKey = GlobalKey<FlipCardState>();
     });
   }
 
@@ -162,6 +183,8 @@ class _FlashCards02State extends State<FlashCards02> {
       _currentIndexNumber = (_currentIndexNumber - 1 >= 0)
           ? _currentIndexNumber - 1
           : quesAnsList02.length - 1;
+          // Defina a chave do FlipCard como uma nova chave para recriá-lo
+      flipCardKey = GlobalKey<FlipCardState>();
     });
   }
 }

@@ -168,7 +168,7 @@ class FlashCardsOpcoes extends StatelessWidget {
                     ),
                     child: TextButton(
                       child: const Text(
-                        'Em Brever um novo Card Aqui',
+                        'Conceitos\nTurma BB1/BB2',
                         style: TextStyle(
                             fontFamily: 'Merriweather',
                             fontSize: 16,
@@ -177,8 +177,29 @@ class FlashCardsOpcoes extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       onPressed: () {
-                        
-                        
+                        Navigator.of(context).push(
+                          PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) {
+                              return FlashCards02();
+                            },
+                            transitionsBuilder: (context, animation,
+                                secondaryAnimation, child) {
+                              const begin = Offset(1.0, 0.0);
+                              const end = Offset.zero;
+                              const curve = Curves.ease;
+                              var tween = Tween(begin: begin, end: end)
+                                  .chain(CurveTween(curve: curve));
+                              var offsetAnimation = animation.drive(tween);
+
+                              return SlideTransition(
+                                position: offsetAnimation,
+                                child: child,
+                              );
+                            },
+                            transitionDuration: Duration(milliseconds: 1500),
+                          ),
+                        );
                       },
                     ),
                   ),
