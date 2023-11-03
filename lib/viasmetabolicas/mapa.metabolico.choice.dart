@@ -9,22 +9,33 @@ class OpcoesMapaMetabolico extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF2E4650),
       appBar: AppBar(
-          iconTheme: const IconThemeData(
-            color: Colors.white,
-          ),
-          centerTitle: true,
-          title: const Text("Vias Bioquímicas",
-              style: TextStyle(
-                  fontFamily: 'Merriweather',
-                  fontSize: 16,
-                  color: Colors.white)),
-          backgroundColor: const Color(0xFF2E4D59),
-          toolbarHeight: 80,
-          elevation: 0,
-          shadowColor: mainColor,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
-              actions: <Widget>[
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.device_hub,
+              color: Color(0xFFE58E57),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            const Text("Vias Bioquímicas",
+                style: TextStyle(
+                    fontFamily: 'Merriweather',
+                    fontSize: 18,
+                    color: Colors.white)),
+          ],
+        ),
+        backgroundColor: const Color(0xFF2E4D59),
+        toolbarHeight: 80,
+        elevation: 0,
+        shadowColor: mainColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
+        actions: <Widget>[
           IconButton(
             icon: const Icon(
               Icons.home,
@@ -36,7 +47,8 @@ class OpcoesMapaMetabolico extends StatelessWidget {
               }));
             },
           )
-        ],),
+        ],
+      ),
       body: Stack(
         children: [
           Container(
@@ -48,21 +60,20 @@ class OpcoesMapaMetabolico extends StatelessWidget {
               ),
             ),
             foregroundDecoration: BoxDecoration(
-                  color: Color.fromRGBO(43, 70, 80, 0.8),
-                ),
+              color: Color.fromRGBO(43, 70, 80, 0.8),
+            ),
           ),
           SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: 20,),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF2D6BD),
-                    borderRadius: BorderRadius.circular(10),
+            child: Container(
+              alignment: AlignmentDirectional.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 20,
                   ),
-                  child: TextButton.icon(
+                  TextButton.icon(
                     onPressed: () {
                       Navigator.of(context).push(
                         PageRouteBuilder(
@@ -84,259 +95,20 @@ class OpcoesMapaMetabolico extends StatelessWidget {
                               child: child,
                             );
                           },
+                          transitionDuration: Duration(milliseconds: 1500),
                         ),
                       );
                     },
-                    icon: const Icon(Icons.device_hub,
-                        color: Color(0xFF2b1d0e)),
+                    icon:
+                        const Icon(Icons.device_hub, color: Color(0xFF2b1d0e)),
                     style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
                       alignment: Alignment.centerLeft,
-                      minimumSize: const Size(10, 50),
-                    ),
-                    label: const Text(
-                      "Glicolise",
-                      style: TextStyle(
-                          fontFamily: 'Merriweather',
-                          fontSize: 12,
-                          color: Color(0xFF2b1d0e)),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20,),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF2D6BD),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: TextButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) {
-                            return MinhaPagina();
-                          },
-                          transitionsBuilder:
-                              (context, animation, secondaryAnimation, child) {
-                            const begin = Offset(1.0, 0.0);
-                            const end = Offset.zero;
-                            const curve = Curves.ease;
-                            var tween = Tween(begin: begin, end: end)
-                                .chain(CurveTween(curve: curve));
-                            var offsetAnimation = animation.drive(tween);
-
-                            return SlideTransition(
-                              position: offsetAnimation,
-                              child: child,
-                            );
-                          },
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.device_hub,
-                        color: Color(0xFF2b1d0e)),
-                    style: TextButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size(10, 50),
-                    ),
-                    label: const Text(
-                      "Ciclo de Krebs",
-                      style: TextStyle(
-                          fontFamily: 'Merriweather',
-                          fontSize: 12,
-                          color: Color(0xFF2b1d0e)),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20,),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF2D6BD),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: TextButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) {
-                            return MinhaPagina();
-                          },
-                          transitionsBuilder:
-                              (context, animation, secondaryAnimation, child) {
-                            const begin = Offset(1.0, 0.0);
-                            const end = Offset.zero;
-                            const curve = Curves.ease;
-                            var tween = Tween(begin: begin, end: end)
-                                .chain(CurveTween(curve: curve));
-                            var offsetAnimation = animation.drive(tween);
-
-                            return SlideTransition(
-                              position: offsetAnimation,
-                              child: child,
-                            );
-                          },
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.device_hub,
-                        color: Color(0xFF2b1d0e)),
-                    style: TextButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size(10, 50),
-                    ),
-                    label: const Text(
-                      "Cadeia Respiratória",
-                      style: TextStyle(
-                          fontFamily: 'Merriweather',
-                          fontSize: 12,
-                          color: Color(0xFF2b1d0e)),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20,),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF2D6BD),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: TextButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) {
-                            return MinhaPagina();
-                          },
-                          transitionsBuilder:
-                              (context, animation, secondaryAnimation, child) {
-                            const begin = Offset(1.0, 0.0);
-                            const end = Offset.zero;
-                            const curve = Curves.ease;
-                            var tween = Tween(begin: begin, end: end)
-                                .chain(CurveTween(curve: curve));
-                            var offsetAnimation = animation.drive(tween);
-
-                            return SlideTransition(
-                              position: offsetAnimation,
-                              child: child,
-                            );
-                          },
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.device_hub,
-                        color: Color(0xFF2b1d0e)),
-                    style: TextButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size(10, 50),
-                    ),
-                    label: const Text(
-                      "Fermentação Álcoolica",
-                      style: TextStyle(
-                          fontFamily: 'Merriweather',
-                          fontSize: 12,
-                          color: Color(0xFF2b1d0e)),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20,),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF2D6BD),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: TextButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) {
-                            return MinhaPagina();
-                          },
-                          transitionsBuilder:
-                              (context, animation, secondaryAnimation, child) {
-                            const begin = Offset(1.0, 0.0);
-                            const end = Offset.zero;
-                            const curve = Curves.ease;
-                            var tween = Tween(begin: begin, end: end)
-                                .chain(CurveTween(curve: curve));
-                            var offsetAnimation = animation.drive(tween);
-
-                            return SlideTransition(
-                              position: offsetAnimation,
-                              child: child,
-                            );
-                          },
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.device_hub,
-                        color: Color(0xFF2b1d0e)),
-                    style: TextButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size(10, 50),
-                    ),
-                    label: const Text(
-                      "Fermentação Etílica",
-                      style: TextStyle(
-                          fontFamily: 'Merriweather',
-                          fontSize: 12,
-                          color: Color(0xFF2b1d0e)),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20,),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF2D6BD),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: TextButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) {
-                            return MinhaPagina();
-                          },
-                          transitionsBuilder:
-                              (context, animation, secondaryAnimation, child) {
-                            const begin = Offset(1.0, 0.0);
-                            const end = Offset.zero;
-                            const curve = Curves.ease;
-                            var tween = Tween(begin: begin, end: end)
-                                .chain(CurveTween(curve: curve));
-                            var offsetAnimation = animation.drive(tween);
-
-                            return SlideTransition(
-                              position: offsetAnimation,
-                              child: child,
-                            );
-                          },
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.device_hub,
-                        color: Color(0xFF2b1d0e)),
-                    style: TextButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size(10, 50),
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
                     ),
                     label: const Text(
                       "Gliconeogênese",
@@ -347,45 +119,140 @@ class OpcoesMapaMetabolico extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                ),
-                SizedBox(height: 20,),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF2D6BD),
-                    borderRadius: BorderRadius.circular(10),
+                  SizedBox(
+                    height: 20,
                   ),
-                  child: TextButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) {
-                            return MinhaPagina();
-                          },
-                          transitionsBuilder:
-                              (context, animation, secondaryAnimation, child) {
-                            const begin = Offset(1.0, 0.0);
-                            const end = Offset.zero;
-                            const curve = Curves.ease;
-                            var tween = Tween(begin: begin, end: end)
-                                .chain(CurveTween(curve: curve));
-                            var offsetAnimation = animation.drive(tween);
-
-                            return SlideTransition(
-                              position: offsetAnimation,
-                              child: child,
-                            );
-                          },
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.device_hub,
-                        color: Color(0xFF2b1d0e)),
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.lock, color: Color(0xFF2b1d0e)),
                     style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
                       alignment: Alignment.centerLeft,
-                      minimumSize: const Size(10, 50),
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
+                    ),
+                    label: const Text(
+                      "Glicolise",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 12,
+                          color: Color(0xFF2b1d0e)),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.lock, color: Color(0xFF2b1d0e)),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
+                      alignment: Alignment.centerLeft,
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
+                    ),
+                    label: const Text(
+                      "Ciclo de Krebs",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 12,
+                          color: Color(0xFF2b1d0e)),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.lock, color: Color(0xFF2b1d0e)),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
+                      alignment: Alignment.centerLeft,
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
+                    ),
+                    label: const Text(
+                      "Cadeia Respiratória",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 12,
+                          color: Color(0xFF2b1d0e)),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.lock, color: Color(0xFF2b1d0e)),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
+                      alignment: Alignment.centerLeft,
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
+                    ),
+                    label: const Text(
+                      "Fermentação Álcoolica",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 12,
+                          color: Color(0xFF2b1d0e)),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.lock, color: Color(0xFF2b1d0e)),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
+                      alignment: Alignment.centerLeft,
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
+                    ),
+                    label: const Text(
+                      "Fermentação Etílica",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 12,
+                          color: Color(0xFF2b1d0e)),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.lock, color: Color(0xFF2b1d0e)),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
+                      alignment: Alignment.centerLeft,
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
                     ),
                     label: const Text(
                       "Glicogenólise",
@@ -396,45 +263,20 @@ class OpcoesMapaMetabolico extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                ),
-                SizedBox(height: 20,),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF2D6BD),
-                    borderRadius: BorderRadius.circular(10),
+                  SizedBox(
+                    height: 20,
                   ),
-                  child: TextButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) {
-                            return MinhaPagina();
-                          },
-                          transitionsBuilder:
-                              (context, animation, secondaryAnimation, child) {
-                            const begin = Offset(1.0, 0.0);
-                            const end = Offset.zero;
-                            const curve = Curves.ease;
-                            var tween = Tween(begin: begin, end: end)
-                                .chain(CurveTween(curve: curve));
-                            var offsetAnimation = animation.drive(tween);
-
-                            return SlideTransition(
-                              position: offsetAnimation,
-                              child: child,
-                            );
-                          },
-                        ),
-                      );
-                    },
-                    icon: const Icon(Icons.device_hub,
-                        color: Color(0xFF2b1d0e)),
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.lock, color: Color(0xFF2b1d0e)),
                     style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
                       alignment: Alignment.centerLeft,
-                      minimumSize: const Size(10, 50),
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
                     ),
                     label: const Text(
                       "Glicogênese",
@@ -445,78 +287,66 @@ class OpcoesMapaMetabolico extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                ),
-                SizedBox(height: 20,),
-                SizedBox(height: 20,),
-              ],
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.lock, color: Color(0xFF2b1d0e)),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
+                      alignment: Alignment.centerLeft,
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
+                    ),
+                    label: const Text(
+                      "Beta-Oxidação",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 12,
+                          color: Color(0xFF2b1d0e)),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.lock, color: Color(0xFF2b1d0e)),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
+                      alignment: Alignment.centerLeft,
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
+                    ),
+                    label: const Text(
+                      "Sintese de Ácidos Graxos",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 12,
+                          color: Color(0xFF2b1d0e)),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
       ),
-
-      /*
-      Center(
-        child: ListView(
-          children: [
-            const SizedBox(height: 40),
-            const Icon(Icons.device_hub, color: Colors.white, size: 60),
-            const SizedBox(height: 40),
-            Container(
-              margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-              decoration: BoxDecoration(
-                color: const Color(0xFFa7e2dd),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: TextButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) {
-                        return MinhaPagina();
-                      },
-                      transitionsBuilder:
-                          (context, animation, secondaryAnimation, child) {
-                        const begin = Offset(1.0, 0.0);
-                        const end = Offset.zero;
-                        const curve = Curves.ease;
-                        var tween = Tween(begin: begin, end: end)
-                            .chain(CurveTween(curve: curve));
-                        var offsetAnimation = animation.drive(tween);
-
-                        return SlideTransition(
-                          position: offsetAnimation,
-                          child: child,
-                        );
-                      },
-                    ),
-                  );
-                },
-                /*
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return MinhaPagina();
-                  }));
-                },
-                */
-                icon:
-                    const Icon(Icons.circle_rounded, color: Color(0xFF2b1d0e)),
-                style: TextButton.styleFrom(
-                  alignment: Alignment.centerLeft,
-                  minimumSize: const Size(100, 50),
-                ),
-                label: const Text(
-                  "Gliconeogênese",
-                  style: TextStyle(
-                      fontFamily: 'Merriweather',
-                      fontSize: 12,
-                      color: Color(0xFF2b1d0e)),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),*/
     );
   }
 }

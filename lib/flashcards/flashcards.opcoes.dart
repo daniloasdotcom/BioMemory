@@ -168,7 +168,7 @@ class FlashCardsOpcoes extends StatelessWidget {
                     ),
                     child: TextButton(
                       child: const Text(
-                        'Conceitos: Metabolismos',
+                        'Em Brever um novo Card Aqui',
                         style: TextStyle(
                             fontFamily: 'Merriweather',
                             fontSize: 16,
@@ -177,10 +177,8 @@ class FlashCardsOpcoes extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const FlashCards02();
-                        }));
+                        
+                        
                       },
                     ),
                   ),
@@ -214,7 +212,7 @@ class FlashCardsOpcoes extends StatelessWidget {
                     ),
                     child: TextButton(
                       child: const Text(
-                        'Glicólise',
+                        'Em Brever um novo Card Aqui',
                         style: TextStyle(
                             fontFamily: 'Merriweather',
                             fontSize: 16,
@@ -245,7 +243,7 @@ class FlashCardsOpcoes extends StatelessWidget {
                     ),
                     child: TextButton(
                       child: const Text(
-                        'Via das pentoses fosfato',
+                        'Em Brever um novo Card Aqui',
                         style: TextStyle(
                             fontFamily: 'Merriweather',
                             fontSize: 16,

@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                       height: 40,
                     ),
                     Text(
-                      "Your Biochemistry app completely based on cognitive learning science",
+                      "Seu aplicativo de estudo de bioquímica completamente baseado em ciência cognitiva de aprendizagem",
                       style: TextStyle(
                           fontFamily: 'Merriweather',
                           fontSize: 13,
@@ -107,7 +107,7 @@ class HomePage extends StatelessWidget {
                   minimumSize: const Size(100, 50),
                 ),
                 label: const Text(
-                  "Guided Study",
+                  "Estudo Guiado",
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,
@@ -163,7 +163,7 @@ class HomePage extends StatelessWidget {
                   minimumSize: const Size(100, 50),
                 ),
                 label: const Text(
-                  "Metabolic Pathways",
+                  "Vias Bioquímicas",
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,
@@ -256,7 +256,7 @@ class HomePage extends StatelessWidget {
                   minimumSize: const Size(100, 50),
                 ),
                 label: const Text(
-                  "About This App",
+                  "Sobre o Aplicativo",
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 12,
@@ -280,7 +280,7 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "Developed by",
+                    "Desenvolvido por",
                     style: TextStyle(
                         fontFamily: 'Merriweather',
                         fontSize: 14,

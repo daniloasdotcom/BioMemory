@@ -13,9 +13,23 @@ class EstudoGuiado extends StatelessWidget {
           color: Colors.white,
         ),
         centerTitle: true,
-        title: const Text("Vias Bioquímicas",
-            style: TextStyle(
-                fontFamily: 'Merriweather', fontSize: 16, color: Colors.white)),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.book_outlined,
+              color: Color(0xFFE58E57),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            const Text("Estudo Guiado",
+                style: TextStyle(
+                    fontFamily: 'Merriweather',
+                    fontSize: 18,
+                    color: Colors.white)),
+          ],
+        ),
         backgroundColor: const Color(0xFF2E4D59),
         toolbarHeight: 80,
         elevation: 0,
@@ -50,24 +64,39 @@ class EstudoGuiado extends StatelessWidget {
             ),
           ),
           SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF2D6BD),
-                    borderRadius: BorderRadius.circular(10),
+            child: Container(
+              alignment: AlignmentDirectional.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 20,
                   ),
-                  child: TextButton.icon(
+                  TextButton.icon(
+                    icon:
+                        const Icon(Icons.book_outlined, color: Color(0xFF2b1d0e)),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
+                      alignment: Alignment.centerLeft,
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
+                    ),
+                    label: const Text(
+                      "Lipídios",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 12,
+                          color: Color(0xFF2b1d0e)),
+                      textAlign: TextAlign.left,
+                    ),
                     onPressed: () {
                       Navigator.of(context).push(
                         PageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) {
+                          pageBuilder: (context, animation, secondaryAnimation) {
                             return Lipidios();
                           },
                           transitionsBuilder:
@@ -84,30 +113,16 @@ class EstudoGuiado extends StatelessWidget {
                               child: child,
                             );
                           },
-                           transitionDuration: Duration(milliseconds: 1500),
+                          transitionDuration: Duration(milliseconds: 1500),
                         ),
                       );
                     },
-                    icon:
-                        const Icon(Icons.book_outlined, color: Color(0xFF2b1d0e)),
-                    style: TextButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size(10, 50),
-                    ),
-                    label: const Text(
-                      "Lipídios",
-                      style: TextStyle(
-                          fontFamily: 'Merriweather',
-                          fontSize: 12,
-                          color: Color(0xFF2b1d0e)),
-                      textAlign: TextAlign.left,
-                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-              ],
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
