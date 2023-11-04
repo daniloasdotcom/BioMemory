@@ -11,6 +11,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
   // Variável para controlar a exibição da Seção 3
   bool showSection3 = false;
   bool showSection5 = false;
+  bool showSection7 = false;
 
   // Altura da tela atual
   double screenHeight = 0.0;
@@ -37,6 +38,13 @@ class _MinhaPaginaState extends State<MinhaPagina> {
     "Frutose",
   ];
 
+  final List<String> buttonLabels04 = [
+    "3-Fosfoglicerato",
+    "2-Fosfoglicerato",
+    "Gliceraldeído-3-Fosfato",
+    "Frutose",
+  ];
+
   // Gerador de números aleatórios
   final Random random = Random();
   get mainColor => null;
@@ -51,9 +59,11 @@ class _MinhaPaginaState extends State<MinhaPagina> {
   List<int> randomIndices01 = [];
   List<int> randomIndices02 = [];
   List<int> randomIndices03 = [];
+  List<int> randomIndices04 = [];
   bool showSection2 = false;
   bool showSection4 = false;
   bool showSection6 = false;
+  bool showSection8 = false;
 
   // Função para rolar para a Seção 2
   void _scrollToSection2(context) {
@@ -87,9 +97,29 @@ class _MinhaPaginaState extends State<MinhaPagina> {
     );
   }
 
+  // Função para rolar para a Seção 6
   void _scrollToSection6(context) {
     setState(() {
       showSection6 = true;
+    });
+
+    double appBarHeight = AppBar().preferredSize.height;
+    double statusBarHeight = MediaQuery.of(context).padding.top;
+    double totalHeight = appBarHeight + statusBarHeight;
+    double targetPosition =
+        _scrollController.offset + (screenHeight + totalHeight);
+
+    _scrollController.animateTo(
+      targetPosition,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  // Função para rolar para a Seção 8
+  void _scrollToSection8(context) {
+    setState(() {
+      showSection8 = true;
     });
 
     double appBarHeight = AppBar().preferredSize.height;
@@ -111,6 +141,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
     randomIndices01 = generateRandomIndices(buttonLabels01.length);
     randomIndices02 = generateRandomIndices(buttonLabels02.length);
     randomIndices03 = generateRandomIndices(buttonLabels03.length);
+    randomIndices04 = generateRandomIndices(buttonLabels04.length);
     _scrollController.addListener(_updateScreenHeight);
 
     print("Altura da tela após _updateScreenHeight ");
@@ -161,6 +192,30 @@ class _MinhaPaginaState extends State<MinhaPagina> {
     if (!showSection5) {
       setState(() {
         showSection5 = true;
+      });
+    }
+
+    _scrollController.animateTo(
+      targetPosition,
+      duration: Duration(seconds: 2),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  void _scrollToSection07() {
+    double appBarHeight = AppBar().preferredSize.height;
+    double statusBarHeight = MediaQuery.of(context).padding.top;
+    double totalHeight = appBarHeight + statusBarHeight;
+
+    double targetPosition =
+        _scrollController.offset + (screenHeight + totalHeight);
+
+    print("E o targetPositio é");
+    print(targetPosition);
+
+    if (!showSection7) {
+      setState(() {
+        showSection7 = true;
       });
     }
 
@@ -580,6 +635,134 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                               10.0), // Ajuste o raio conforme necessário
                           child: Image.asset(
                               'assets/images/gliconeogenese/Slide6.png',
+                              fit: BoxFit.cover,
+                              width: double.infinity),
+                        ),
+                        
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary:
+                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                          ),
+                          onPressed: () {
+                            if (!showSection7) {
+                              _scrollToSection07();
+                            }
+                          },
+                          child: Text('Próximo...',
+                              style: TextStyle(
+                                  fontFamily: 'Merriweather',
+                                  fontSize: 14,
+                                  height: 1.5,
+                                  color: Color(0xFF46171b)),
+                              textAlign: TextAlign.justify),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              if (showSection7)
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                child: Center(
+                  child: Container(
+                    height: screenHeight,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "4ª Reação\n\nQual o produto?",
+                          style: TextStyle(
+                              fontFamily: 'Merriweather',
+                              fontSize: 20,
+                              color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(left: 40, right: 40),
+                          child: Divider(
+                            color: Colors.white, // Define a cor da linha
+                            thickness:
+                                0.5, // Define a espessura da linha (opcional)
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        GridView.builder(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 16.0,
+                            mainAxisSpacing: 16.0,
+                            childAspectRatio: screenWidth / 1.5 / 100,
+                          ),
+                          shrinkWrap: true,
+                          itemCount: buttonLabels04.length,
+                          itemBuilder: (context, index) {
+                            final randomizedIndex = randomIndices04[index];
+                            final isScrollButton = randomizedIndex == 0;
+
+                            return ElevatedButton(
+                              onPressed: () {
+                                if (isScrollButton) {
+                                  _scrollToSection8(context);
+                                } else {
+                                  // Ação para os outros botões
+                                }
+                              },
+                              child: Text(buttonLabels04[randomizedIndex],
+                                  style: TextStyle(
+                                      fontFamily: 'Merriweather',
+                                      fontSize: 12,
+                                      color: Colors.white),
+                                  textAlign: TextAlign.center),
+                            );
+                          },
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Ajuste o raio conforme necessário
+                          child: Image.asset(
+                              'assets/images/gliconeogenese/Slide7.png',
+                              fit: BoxFit.cover,
+                              width: double.infinity),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            if (showSection8)
+              Container(
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                child: Center(
+                  child: Container(
+                    height: screenHeight,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "4ª Reação - Respondida",
+                          style: TextStyle(
+                              fontFamily: 'Merriweather',
+                              fontSize: 20,
+                              color: Colors.white),
+                          textAlign: TextAlign.center,
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(left: 40, right: 40),
+                          child: Divider(
+                            color: Colors.white, // Define a cor da linha
+                            thickness:
+                                0.5, // Define a espessura da linha (opcional)
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Ajuste o raio conforme necessário
+                          child: Image.asset(
+                              'assets/images/gliconeogenese/Slide8.png',
                               fit: BoxFit.cover,
                               width: double.infinity),
                         ),

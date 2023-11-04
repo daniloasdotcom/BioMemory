@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
   final Uri _url = Uri.parse(
-      'https://github.com/daniloasdotcom/BioMemory/blob/main/Pol%C3%ADtica%20de%20Privacidade%20Aplicativo.pdf');
+      'https://bioquimicacomdanilo.com.br/politicaapp');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
