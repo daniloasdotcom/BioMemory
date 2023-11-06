@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:app_bioquimica/about/about.dart';
 import 'package:app_bioquimica/flashcards/flashcards.opcoes.dart';
 import 'package:app_bioquimica/introdution/study.guided.dart';
