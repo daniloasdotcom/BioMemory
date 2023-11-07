@@ -142,7 +142,9 @@ class _LipidiosState extends State<Lipidios> {
               Icons.book_outlined,
               color: Color(0xFFE58E57),
             ),
-            SizedBox(width: 20,),
+            SizedBox(
+              width: 20,
+            ),
             const Text("Lipídios",
                 style: TextStyle(
                     fontFamily: 'Merriweather',
@@ -186,7 +188,7 @@ class _LipidiosState extends State<Lipidios> {
                         height: 30,
                       ),
                       Text(
-                          'Os lipídios são um grupo diverso de moléculas orgânicas que desempenham papéis cruciais nos seres vivos. Neste texto, exploraremos os diferentes tipos de lipídios, suas funções e sua importância na bioquímica. Ao longo do texto, serão incluídas questões de múltipla escolha para testar seu conhecimento, e comentários fornecerão explicações para as respostas corretas.',
+                          'O grupo de moléculas orgânicas chamadas de lipídios papéis cruciais nos seres vivos. Neste estudo dirigido, exploraremos os diferentes tipos de lipídios, suas funções e sua importância na bioquímica. ',
                           style: TextStyle(
                               fontFamily: 'Merriweather',
                               fontSize: 14,
@@ -243,7 +245,18 @@ class _LipidiosState extends State<Lipidios> {
                           height: 30,
                         ),
                         Text(
-                            'Os lipídios são moléculas orgânicas que são insolúveis em água e têm funções vitais em várias funções biológicas. Eles incluem gorduras, fosfolipídios, esteroides e outros.',
+                            'Uma característica comum entre as móleculas lipídicas é o fato delas serem insolúveis em água, porém sóluveis em solventes orgânicos devido a suas caracterítica apolar.',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                            'Tal insolubilidade em água é um fator importante para que os lipídios exerçam funções fundamentais como componentes da membrana celular e também como solvente de vitaminas lipossolúveis como é o caso das vitaminas A, D, E e K.',
                             style: TextStyle(
                                 fontFamily: 'Merriweather',
                                 fontSize: 14,
@@ -271,13 +284,27 @@ class _LipidiosState extends State<Lipidios> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Text(
-                                          'A resposta correta é b) Lipídios são insolúveis em água. Esta é uma característica fundamental dos lipídios; eles não se misturam bem com a água devido à sua natureza hidrofóbica.',
+                                          'Exatamente, os Lipídios são insolúveis em água. Esta é uma característica fundamental dos lipídios; eles não se misturam bem com a água devido à sua natureza hidrofóbica.',
                                           style: TextStyle(
                                               fontFamily: 'Merriweather',
                                               fontSize: 14,
                                               height: 2.0,
                                               color: Colors.white),
                                           textAlign: TextAlign.justify),
+                                      SizedBox(
+                                        height: 30,
+                                      ),
+                                      Text(
+                                          'Tente, por exemplo, misturar água com óleo. Aposto que eles não se misturaram. Isso ocorre por que óleo e gorduras são ricos em lipídios.',
+                                          style: TextStyle(
+                                              fontFamily: 'Merriweather',
+                                              fontSize: 14,
+                                              height: 2.0,
+                                              color: Colors.white),
+                                          textAlign: TextAlign.justify),
+                                      SizedBox(
+                                        height: 30,
+                                      ),
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(
                                             10.0), // Ajuste o raio conforme necessário
@@ -330,7 +357,7 @@ class _LipidiosState extends State<Lipidios> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                            'Os lipídios desempenham diversas funções no corpo, incluindo armazenamento de energia, formação das membranas celulares e transporte de vitaminas lipossolúveis.',
+                            'Os lipídios desempenham diferentes funções em organismos vivos. Uma das principais é serem um meio de armazenamento de energia, servindo assim como fonte de energia. E o principal exemplo de mólecula lipídica com este tipo de função são os triglicerídios.',
                             style: TextStyle(
                                 fontFamily: 'Merriweather',
                                 fontSize: 14,
@@ -358,7 +385,7 @@ class _LipidiosState extends State<Lipidios> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Text(
-                                          ' A resposta correta é b) Armazenamento de energia. Os triglicerídeos armazenam energia na forma de ácidos graxos, tornando-os uma reserva importante de energia no corpo.',
+                                          'Certa resposta!\n\nOs triglicerídeos, também chamados de triacilgliceróis, são compostor por 3 móleculas de ácidos graxos ligadas a uma molécula de glicerol',
                                           style: TextStyle(
                                               fontFamily: 'Merriweather',
                                               fontSize: 14,
@@ -376,6 +403,17 @@ class _LipidiosState extends State<Lipidios> {
                                             fit: BoxFit.cover,
                                             width: double.infinity),
                                       ),
+                                      SizedBox(
+                                        height: 30,
+                                      ),
+                                      Text(
+                                          'Os triglicerídeos armazenam energia nas cadeias de carbono dos ácidos graxos, tornando-os uma reserva importante de energia para mamiferos.',
+                                          style: TextStyle(
+                                              fontFamily: 'Merriweather',
+                                              fontSize: 14,
+                                              height: 2.0,
+                                              color: Colors.white),
+                                          textAlign: TextAlign.justify),
                                       SizedBox(
                                         height: 30,
                                       ),
@@ -397,9 +435,7 @@ class _LipidiosState extends State<Lipidios> {
                                                 color: Color(0xFF46171b)),
                                             textAlign: TextAlign.justify),
                                       ),
-                                      SizedBox(
-                                        height: 30,
-                                      ),
+                                      
                                     ],
                                   ),
                                 ),
@@ -423,7 +459,7 @@ class _LipidiosState extends State<Lipidios> {
                           height: 30,
                         ),
                         Text(
-                            'Existem vários tipos de lipídios, cada um com características distintas e funções. Por exemplo, os fosfolipídios são essenciais na formação das membranas celulares.',
+                            'Já mencionamos que existem vários tipos de lipídios, cada um com características distintas e funções. Por exemplo, os fosfolipídios são essenciais na formação das membranas celulares.',
                             style: TextStyle(
                                 fontFamily: 'Merriweather',
                                 fontSize: 14,
@@ -462,7 +498,18 @@ class _LipidiosState extends State<Lipidios> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Text(
-                                          'A resposta correta é b) Possuem duas caudas hidrofóbicas e uma cabeça hidrofílica. Essa estrutura única permite que os fosfolipídios formem a bicamada lipídica das membranas celulares, com a cabeça hidrofílica voltada para fora e as caudas hidrofóbicas voltadas para dentro.',
+                                          'Perfeito!! Os Fosfolipídios Possuem duas caudas hidrofóbicas (constituinda majoritariamente por ácidos graxos) e uma cabeça hidrofílica (formada comumente por um grupo fosfato e um aminoalcool).',
+                                          style: TextStyle(
+                                              fontFamily: 'Merriweather',
+                                              fontSize: 14,
+                                              height: 2.0,
+                                              color: Colors.white),
+                                          textAlign: TextAlign.justify),
+                                      SizedBox(
+                                        height: 30,
+                                      ),
+                                      Text(
+                                          'Essa estrutura única permite que os fosfolipídios formem a bicamada lipídica das membranas celulares, com a cabeça hidrofílica voltada para fora e as caudas hidrofóbicas voltadas para dentro.',
                                           style: TextStyle(
                                               fontFamily: 'Merriweather',
                                               fontSize: 14,
@@ -526,7 +573,7 @@ class _LipidiosState extends State<Lipidios> {
                           height: 30,
                         ),
                         Text(
-                            'O metabolismo de lipídios envolve a quebra de ácidos graxos para a produção de energia e a síntese de lipídios quando necessário.',
+                            'O metabolismo de lipídios que contém ácidos graxo envolve a quebra (catabolismo) de ácidos graxos para a produção de energia e a síntese (anabolismo) de lipídios quando necessário.',
                             style: TextStyle(
                                 fontFamily: 'Merriweather',
                                 fontSize: 14,
@@ -554,7 +601,7 @@ class _LipidiosState extends State<Lipidios> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Text(
-                                          'A resposta correta é c) Beta-oxidação. A beta-oxidação é o processo pelo qual os ácidos graxos são quebrados na mitocôndria para gerar energia.',
+                                          'Exatamente! A beta-oxidação é o processo pelo qual os ácidos graxos provenientes de móleculas lipídicas são quebrados na mitocôndria a cada 2 carbonos para gerar energia na forma de ATP.',
                                           style: TextStyle(
                                               fontFamily: 'Merriweather',
                                               fontSize: 14,
@@ -599,7 +646,7 @@ class _LipidiosState extends State<Lipidios> {
                 Container(
                   margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
                   child: Center(
-                    child: Text('Seção 06',
+                    child: Text('Parabéns!!\n\nVocê chegou a fim desta lição!!\n\nFique de olho nas notificações do Professor para atualizar seu Aplicativo e aproveitar das novas lições que estão por vir!',
                         style: TextStyle(
                             fontFamily: 'Merriweather',
                             fontSize: 14,
@@ -608,6 +655,9 @@ class _LipidiosState extends State<Lipidios> {
                         textAlign: TextAlign.justify),
                   ),
                 ),
+                SizedBox(
+                          height: 100,
+                        ),
             ],
           ),
         ],
@@ -891,7 +941,8 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
       padding: EdgeInsets.all(16.0),
       child: Column(
         children: [
-          Text('Qual é uma característica distintiva dos fosfolipídios?',
+          Text(
+              'Olhe para a figura acima. Qual é uma característica distintiva dos fosfolipídios?',
               style: TextStyle(
                 fontFamily: 'Merriweather',
                 fontSize: 14,
@@ -1009,7 +1060,7 @@ class _PerguntaComAlternativas04State extends State<PerguntaComAlternativas04> {
       child: Column(
         children: [
           Text(
-              'Qual é o processo pelo qual os ácidos graxos são quebrados para produzir energia?',
+              'Qual das três opções a seguir você acredita ser o processo pelo qual os ácidos graxos são quebrados para produzir energia?',
               style: TextStyle(
                 fontFamily: 'Merriweather',
                 fontSize: 14,
