@@ -188,7 +188,7 @@ class _LipidiosState extends State<Lipidios> {
                         height: 30,
                       ),
                       Text(
-                          'O grupo de moléculas orgânicas chamadas de lipídios papéis cruciais nos seres vivos. Neste estudo dirigido, exploraremos os diferentes tipos de lipídios, suas funções e sua importância na bioquímica. ',
+                          'O grupo de moléculas orgânicas chamadas de lipídios posui papéis cruciais nos seres vivos. Neste estudo dirigido, exploraremos os diferentes tipos de lipídios, suas funções e sua importância na bioquímica. ',
                           style: TextStyle(
                               fontFamily: 'Merriweather',
                               fontSize: 14,
@@ -498,7 +498,7 @@ class _LipidiosState extends State<Lipidios> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Text(
-                                          'Perfeito!! Os Fosfolipídios Possuem duas caudas hidrofóbicas (constituinda majoritariamente por ácidos graxos) e uma cabeça hidrofílica (formada comumente por um grupo fosfato e um aminoalcool).',
+                                          'Perfeito!! Os Fosfolipídios Possuem duas caudas hidrofóbicas (constituida majoritariamente por ácidos graxos) e uma cabeça hidrofílica (formada comumente por um grupo fosfato e um aminoalcool).',
                                           style: TextStyle(
                                               fontFamily: 'Merriweather',
                                               fontSize: 14,

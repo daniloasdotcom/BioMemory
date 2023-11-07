@@ -41,4 +41,39 @@ List<CardsAula02> quesAnsList02 = [
     answer:
         "A glicogênese é a síntese de glicogênio a partir de glicose ou outros precursores e ocorre principalmente no fígado e nos músculos esqueléticos para armazenar glicose como uma forma de reserva de energia.",
   ),
+  CardsAula02(
+    question: "Conceito:\n\nCarboidrato",
+    answer:
+        "São macronutrientes compostos por açúcares simples e complexos, que servem como fonte de energia para o organismo. Eles desempenham um papel fundamental na nutrição e no metabolismo.",
+  ),
+  CardsAula02(
+    question: "Conceito:\n\nATP (Adenosina Trifosfato)",
+    answer:
+        "É a principal molécula de energia nas células, armazenando e fornecendo energia para diversas atividades celulares, como contração muscular e síntese de proteína.",
+  ),
+  CardsAula02(
+    question: "Conceito:\n\nEnzima",
+    answer:
+        "São proteínas que atuam como catalisadores biológicos, acelerando as reações químicas nas células, tornando-as mais eficientes e específicas.",
+  ),
+  CardsAula02(
+    question: "Conceito:\n\nVia bioquímica",
+    answer:
+        "É uma sequência de reações químicas interconectadas que ocorrem no metabolismo para realizar funções específicas no organismo.",
+  ),
+  CardsAula02(
+    question: "Conceito:\n\nAnabolismo",
+    answer:
+        "É o oposto do catabolismo, envolvendo reações metabólicas que constroem moléculas complexas a partir de componentes mais simples, requerendo energia.",
+  ),
+  CardsAula02(
+    question: "Conceito:\n\nCatabolismo",
+    answer:
+        "Refere-se às reações metabólicas que quebram moléculas complexas em componentes mais simples, liberando energia no processo.",
+  ),
+  CardsAula02(
+    question: "Conceito:\n\nMetabolismo",
+    answer:
+        "É o conjunto de processos químicos que ocorrem no organismo para manter a vida, envolvendo a transformação de substâncias (nutrientes) em energia e materiais necessários para as funções do corpo.",
+  ),
 ];

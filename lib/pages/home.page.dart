@@ -1,6 +1,6 @@
 import 'package:app_bioquimica/about/about.dart';
 import 'package:app_bioquimica/flashcards/flashcards.opcoes.dart';
-import 'package:app_bioquimica/introdution/study.guided.dart';
+import 'package:app_bioquimica/studyguided/study.guided.dart';
 import 'package:app_bioquimica/viasmetabolicas/mapa.metabolico.choice.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

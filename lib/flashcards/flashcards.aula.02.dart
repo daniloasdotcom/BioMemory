@@ -16,7 +16,7 @@ class FlashCards02 extends StatefulWidget {
 
 class _FlashCards02State extends State<FlashCards02> {
   int _currentIndexNumber = 0;
-  int _totalCards = 7; // Número total de cartões
+  int _totalCards = 14; // Número total de cartões
   double _initial = 0.1;
 
   // Adicione uma chave global para o FlipCard
@@ -152,7 +152,7 @@ class _FlashCards02State extends State<FlashCards02> {
   void updateToNext() {
     setState(() {
       _initial = _initial + 0.1;
-      if (_initial > 0.8) {
+      if (_initial > 1.5) {
         _initial = 0.1;
       }
     });
@@ -161,7 +161,7 @@ class _FlashCards02State extends State<FlashCards02> {
   void updateToPrev() {
     setState(() {
       _initial = _initial - 0.1;
-      if (_initial < 0.1) {
+      if (_initial < 1.5) {
         _initial = 0.8;
       }
     });
