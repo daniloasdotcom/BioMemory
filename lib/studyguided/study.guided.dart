@@ -1,6 +1,6 @@
 import 'package:app_bioquimica/flashcards/constantes.dart';
-import 'package:app_bioquimica/introdution/lipidios.dart';
 import 'package:app_bioquimica/pages/home.page.dart';
+import 'package:app_bioquimica/studyguided/lipidios.dart';
 import 'package:flutter/material.dart';
 
 class EstudoGuiado extends StatelessWidget {

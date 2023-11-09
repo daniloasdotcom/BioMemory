@@ -42,6 +42,11 @@ List<CardsAula02> quesAnsList02 = [
         "A glicogênese é a síntese de glicogênio a partir de glicose ou outros precursores e ocorre principalmente no fígado e nos músculos esqueléticos para armazenar glicose como uma forma de reserva de energia.",
   ),
   CardsAula02(
+    question: "Conceito:\n\Via das Pentoses Fosfato",
+    answer:
+        "É uma via bioquímica que transforma glicose em açúcares de cinco carbonos e fornece coenzimas (NADPH) para uso na sintese de outras moléculas e fonte de elétron em reações antioxidantes.",
+  ),
+  CardsAula02(
     question: "Conceito:\n\nCarboidrato",
     answer:
         "São macronutrientes compostos por açúcares simples e complexos, que servem como fonte de energia para o organismo. Eles desempenham um papel fundamental na nutrição e no metabolismo.",
