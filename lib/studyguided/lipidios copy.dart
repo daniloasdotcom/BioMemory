@@ -201,10 +201,8 @@ class _LipidiosState extends State<Lipidios> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(
                             10.0), // Ajuste o raio conforme necessário
-                        child: InteractiveViewer(
-                          child: Image.asset('assets/images/lipidios/oils.jpg',
-                              fit: BoxFit.cover, width: double.infinity),
-                        ),
+                        child: Image.asset('assets/images/lipidios/oils.jpg',
+                            fit: BoxFit.cover, width: double.infinity),
                       ),
                       SizedBox(
                         height: 30,
@@ -310,12 +308,10 @@ class _LipidiosState extends State<Lipidios> {
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(
                                             10.0), // Ajuste o raio conforme necessário
-                                        child: InteractiveViewer(
-                                          child: Image.asset(
-                                              'assets/images/lipidios/oil_water.jpg',
-                                              fit: BoxFit.cover,
-                                              width: double.infinity),
-                                        ),
+                                        child: Image.asset(
+                                            'assets/images/lipidios/oil_water.jpg',
+                                            fit: BoxFit.cover,
+                                            width: double.infinity),
                                       ),
                                       SizedBox(
                                         height: 30,
@@ -402,12 +398,10 @@ class _LipidiosState extends State<Lipidios> {
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(
                                             10.0), // Ajuste o raio conforme necessário
-                                        child: InteractiveViewer(
-                                          child: Image.asset(
-                                              'assets/images/lipidios/acidos_graxos.png',
-                                              fit: BoxFit.cover,
-                                              width: double.infinity),
-                                        ),
+                                        child: Image.asset(
+                                            'assets/images/lipidios/acidos_graxos.png',
+                                            fit: BoxFit.cover,
+                                            width: double.infinity),
                                       ),
                                       SizedBox(
                                         height: 30,
@@ -478,12 +472,10 @@ class _LipidiosState extends State<Lipidios> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(
                               10.0), // Ajuste o raio conforme necessário
-                          child: InteractiveViewer(
-                            child: Image.asset(
-                                'assets/images/lipidios/lipidios.png',
-                                fit: BoxFit.cover,
-                                width: double.infinity),
-                          ),
+                          child: Image.asset(
+                              'assets/images/lipidios/lipidios.png',
+                              fit: BoxFit.cover,
+                              width: double.infinity),
                         ),
                         SizedBox(
                           height: 30,
@@ -530,12 +522,10 @@ class _LipidiosState extends State<Lipidios> {
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(
                                             10.0), // Ajuste o raio conforme necessário
-                                        child: InteractiveViewer(
-                                          child: Image.asset(
-                                              'assets/images/lipidios/fosfolipidio.png',
-                                              fit: BoxFit.cover,
-                                              width: double.infinity),
-                                        ),
+                                        child: Image.asset(
+                                            'assets/images/lipidios/fosfolipidio.png',
+                                            fit: BoxFit.cover,
+                                            width: double.infinity),
                                       ),
                                       SizedBox(
                                         height: 30,

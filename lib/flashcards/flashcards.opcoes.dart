@@ -1,6 +1,7 @@
 import 'package:app_bioquimica/flashcards/constantes.dart';
 import 'package:app_bioquimica/flashcards/flashcards.aula.01.dart';
 import 'package:app_bioquimica/flashcards/flashcards.aula.02.dart';
+import 'package:app_bioquimica/flashcards/flashcards.aula.03.dart';
 import 'package:app_bioquimica/pages/home.page.dart';
 import 'package:flutter/material.dart';
 
@@ -233,7 +234,7 @@ class FlashCardsOpcoes extends StatelessWidget {
                     ),
                     child: TextButton(
                       child: const Text(
-                        'Em Brever um novo Card Aqui',
+                        'Para Turma BL01\n\nAminoácido e Proteínas',
                         style: TextStyle(
                             fontFamily: 'Merriweather',
                             fontSize: 16,
@@ -241,7 +242,32 @@ class FlashCardsOpcoes extends StatelessWidget {
                             color: Color(0xFF2b1d0e)),
                         textAlign: TextAlign.center,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) {
+                              return FlashCards03();
+                            },
+                            transitionsBuilder: (context, animation,
+                                secondaryAnimation, child) {
+                              const begin = Offset(1.0, 0.0);
+                              const end = Offset.zero;
+                              const curve = Curves.ease;
+                              var tween = Tween(begin: begin, end: end)
+                                  .chain(CurveTween(curve: curve));
+                              var offsetAnimation = animation.drive(tween);
+
+                              return SlideTransition(
+                                position: offsetAnimation,
+                                child: child,
+                              );
+                            },
+                            transitionDuration: Duration(milliseconds: 1500),
+                          ),
+                        );
+                      },
+                      
                     ),
                   ),
                   const Expanded(child: SizedBox()),

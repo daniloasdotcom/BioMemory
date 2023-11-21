@@ -161,8 +161,8 @@ class _FlashCards02State extends State<FlashCards02> {
   void updateToPrev() {
     setState(() {
       _initial = _initial - 0.1;
-      if (_initial < 1.5) {
-        _initial = 0.8;
+      if (_initial < 0.1) {
+        _initial = 1.5;
       }
     });
   }
