@@ -188,7 +188,7 @@ class _LipidiosState extends State<Lipidios> {
                         height: 30,
                       ),
                       Text(
-                          'O grupo de moléculas orgânicas chamadas de lipídios posui papéis cruciais nos seres vivos. Neste estudo dirigido, exploraremos os diferentes tipos de lipídios, suas funções e sua importância na bioquímica. ',
+                          'O grupo de moléculas orgânicas chamadas de lipídios possui papéis cruciais nos seres vivos. Neste estudo dirigido, exploraremos os diferentes tipos de lipídios, suas funções e sua importância na bioquímica. ',
                           style: TextStyle(
                               fontFamily: 'Merriweather',
                               fontSize: 14,

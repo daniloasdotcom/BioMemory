@@ -2,12 +2,12 @@ import 'package:app_bioquimica/flashcards/constantes.dart';
 import 'package:app_bioquimica/pages/home.page.dart';
 import 'package:flutter/material.dart';
 
-class Lipidios extends StatefulWidget {
+class Enzimas extends StatefulWidget {
   @override
-  State<Lipidios> createState() => _LipidiosState();
+  State<Enzimas> createState() => _EnzimasState();
 }
 
-class _LipidiosState extends State<Lipidios> {
+class _EnzimasState extends State<Enzimas> {
   final ScrollController _scrollController = ScrollController();
 
   double screenHeight = 0.0; // Altura da tela atual
@@ -16,14 +16,18 @@ class _LipidiosState extends State<Lipidios> {
   bool showSection3 = false; // Variável para controlar a exibição da Seção 3
   bool showSection4 = false; // Variável para controlar a exibição da Seção 4
   bool showSection5 = false; // Variável para controlar a exibição da Seção 5
-  bool showSection6 = false; // Variável para controlar a exibição da Seção 5
+  bool showSection6 = false; // Variável para controlar a exibição da Seção 6
+  bool showSection7 = false; // Variável para controlar a exibição da Seção 6
+  bool showSection8 = false; // Variável para controlar a exibição da Seção 6
+  bool showSection9 = false; // Variável para controlar a exibição da Seção 6
+  bool showSection10 = false; // Variável para controlar a exibição da Seção 6
+  bool showSection11 = false; // Variável para controlar a exibição da Seção 6
+  bool showSection12 = false; // Variável para controlar a exibição da Seção 6
+  bool showSection13 = false; // Variável para controlar a exibição da Seção 6
+  bool showSectionFinal =
+      false; // Variável para controlar a exibição da Seção 6
 
   bool respostaCorreta = false;
-  bool mostrarBotaoProximaSecao02 = false;
-  bool mostrarBotaoProximaSecao03 = false;
-  bool mostrarBotaoProximaSecao04 = false;
-  bool mostrarBotaoProximaSecao05 = false;
-  bool mostrarBotaoProximaSecao06 = false;
 
   void initState() {
     super.initState();
@@ -83,6 +87,22 @@ class _LipidiosState extends State<Lipidios> {
       setState(() {
         showSection6 = true;
       });
+    } else if (!showSection7) {
+      setState(() {
+        showSection7 = true;
+      });
+    } else if (!showSection8) {
+      setState(() {
+        showSection8 = true;
+      });
+    } else if (!showSection9) {
+      setState(() {
+        showSection9 = true;
+      });
+    } else if (!showSectionFinal) {
+      setState(() {
+        showSectionFinal = true;
+      });
     }
 
     _scrollController.animateTo(
@@ -92,27 +112,33 @@ class _LipidiosState extends State<Lipidios> {
     );
   }
 
-  void _mostrarBotaoProximaSecao03() {
+  void _mostrarBotaoProximaSecao09() {
     setState(() {
-      mostrarBotaoProximaSecao03 = true;
+      showSection9 = true;
     });
   }
 
-  void _mostrarBotaoProximaSecao04() {
+  void _mostrarBotaoProximaSecao10() {
     setState(() {
-      mostrarBotaoProximaSecao04 = true;
+      showSection10 = true;
     });
   }
 
-  void _mostrarBotaoProximaSecao05() {
+  void _mostrarBotaoProximaSecao11() {
     setState(() {
-      mostrarBotaoProximaSecao05 = true;
+      showSection11 = true;
     });
   }
 
-  void _mostrarBotaoProximaSecao06() {
+  void _mostrarBotaoProximaSecao12() {
     setState(() {
-      mostrarBotaoProximaSecao06 = true;
+      showSection12 = true;
+    });
+  }
+
+  void _mostrarBotaoProximaFinal() {
+    setState(() {
+      showSectionFinal = true;
     });
   }
 
@@ -145,7 +171,7 @@ class _LipidiosState extends State<Lipidios> {
             SizedBox(
               width: 20,
             ),
-            const Text("Lipídios",
+            const Text("Enzimas",
                 style: TextStyle(
                     fontFamily: 'Merriweather',
                     fontSize: 18,
@@ -188,7 +214,7 @@ class _LipidiosState extends State<Lipidios> {
                         height: 30,
                       ),
                       Text(
-                          'O grupo de moléculas orgânicas chamadas de lipídios posui papéis cruciais nos seres vivos. Neste estudo dirigido, exploraremos os diferentes tipos de lipídios, suas funções e sua importância na bioquímica. ',
+                          'As enzimas são proteínas especializadas que atuam como catalisadores biológicos em células.  ',
                           style: TextStyle(
                               fontFamily: 'Merriweather',
                               fontSize: 14,
@@ -198,12 +224,38 @@ class _LipidiosState extends State<Lipidios> {
                       SizedBox(
                         height: 30,
                       ),
+                      Text(
+                          'Essas moléculas desempenham um papel fundamental ao acelerar as reações químicas que ocorrem nas células, permitindo que elas aconteçam em velocidades compatíveis com os processos metabólicos necessários para a vida.',
+                          style: TextStyle(
+                              fontFamily: 'Merriweather',
+                              fontSize: 14,
+                              height: 2.0,
+                              color: Colors.white),
+                          textAlign: TextAlign.justify),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Text(
+                          'A seguir vamos conhecer algumas caaracterísticas importantes das enzimas. Vamos lá!!',
+                          style: TextStyle(
+                              fontFamily: 'Merriweather',
+                              fontSize: 14,
+                              height: 2.0,
+                              color: Colors.white),
+                          textAlign: TextAlign.justify),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      /*
                       ClipRRect(
                         borderRadius: BorderRadius.circular(
                             10.0), // Ajuste o raio conforme necessário
-                        child: Image.asset('assets/images/lipidios/oils.jpg',
-                            fit: BoxFit.cover, width: double.infinity),
+                        child: InteractiveViewer(
+                          child: Image.asset('assets/images/lipidios/oils.jpg',
+                              fit: BoxFit.cover, width: double.infinity),
+                        ),
                       ),
+                      */
                       SizedBox(
                         height: 30,
                       ),
@@ -244,8 +296,18 @@ class _LipidiosState extends State<Lipidios> {
                         SizedBox(
                           height: 30,
                         ),
+                        Text('Especificidade',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.center),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Text(
-                            'Uma característica comum entre as móleculas lipídicas é o fato delas serem insolúveis em água, porém sóluveis em solventes orgânicos devido a suas caracterítica apolar.',
+                            'Cada enzima é altamente específica para seu substrato, que é a molécula sobre a qual ela atua. Essa especificidade ocorre devido à forma tridimensional única da enzima, que se encaixa perfeitamente em seu substrato.',
                             style: TextStyle(
                                 fontFamily: 'Merriweather',
                                 fontSize: 14,
@@ -255,17 +317,28 @@ class _LipidiosState extends State<Lipidios> {
                         SizedBox(
                           height: 30,
                         ),
-                        Text(
-                            'Tal insolubilidade em água é um fator importante para que os lipídios exerçam funções fundamentais como componentes da membrana celular e também como solvente de vitaminas lipossolúveis como é o caso das vitaminas A, D, E e K.',
-                            style: TextStyle(
-                                fontFamily: 'Merriweather',
-                                fontSize: 14,
-                                height: 2.0,
-                                color: Colors.white),
-                            textAlign: TextAlign.justify),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary:
+                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                          ),
+                          onPressed: () {
+                            if (!showSection3) {
+                              _scrollToNextSection();
+                            }
+                          },
+                          child: Text('Próximo...',
+                              style: TextStyle(
+                                  fontFamily: 'Merriweather',
+                                  fontSize: 14,
+                                  height: 1.5,
+                                  color: Color(0xFF46171b)),
+                              textAlign: TextAlign.justify),
+                        ),
                         SizedBox(
                           height: 30,
                         ),
+                        /*
                         PerguntaComAlternativas01(
                           onRespostaCorreta: () {
                             _mostrarBotaoProximaSecao03();
@@ -275,7 +348,8 @@ class _LipidiosState extends State<Lipidios> {
                         SizedBox(
                           height: 30,
                         ),
-                        if (mostrarBotaoProximaSecao03)
+                        */
+                        if (showSection3)
                           Column(
                             children: [
                               Container(
@@ -283,8 +357,7 @@ class _LipidiosState extends State<Lipidios> {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Text(
-                                          'Exatamente, os Lipídios são insolúveis em água. Esta é uma característica fundamental dos lipídios; eles não se misturam bem com a água devido à sua natureza hidrofóbica.',
+                                      Text('Catálise',
                                           style: TextStyle(
                                               fontFamily: 'Merriweather',
                                               fontSize: 14,
@@ -295,7 +368,7 @@ class _LipidiosState extends State<Lipidios> {
                                         height: 30,
                                       ),
                                       Text(
-                                          'Tente, por exemplo, misturar água com óleo. Aposto que eles não se misturaram. Isso ocorre por que óleo e gorduras são ricos em lipídios.',
+                                          'As enzimas aceleram as reações químicas ao diminuir a energia de ativação necessária para que a reação ocorra. Isso permite que as reações biológicas aconteçam em temperaturas compatíveis com a vida.',
                                           style: TextStyle(
                                               fontFamily: 'Merriweather',
                                               fontSize: 14,
@@ -305,14 +378,18 @@ class _LipidiosState extends State<Lipidios> {
                                       SizedBox(
                                         height: 30,
                                       ),
+                                      /*
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(
                                             10.0), // Ajuste o raio conforme necessário
-                                        child: Image.asset(
-                                            'assets/images/lipidios/oil_water.jpg',
-                                            fit: BoxFit.cover,
-                                            width: double.infinity),
+                                        child: InteractiveViewer(
+                                          child: Image.asset(
+                                              'assets/images/lipidios/oil_water.jpg',
+                                              fit: BoxFit.cover,
+                                              width: double.infinity),
+                                        ),
                                       ),
+                                      */
                                       SizedBox(
                                         height: 30,
                                       ),
@@ -322,7 +399,7 @@ class _LipidiosState extends State<Lipidios> {
                                               0xFFa7e2dd), // Cor de fundo personalizada
                                         ),
                                         onPressed: () {
-                                          if (!showSection3) {
+                                          if (!showSection4) {
                                             _scrollToNextSection();
                                           }
                                         },
@@ -349,6 +426,7 @@ class _LipidiosState extends State<Lipidios> {
                 ),
 
               // Seção 3
+              /*
               if (showSection3)
                 Container(
                   margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
@@ -398,10 +476,12 @@ class _LipidiosState extends State<Lipidios> {
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(
                                             10.0), // Ajuste o raio conforme necessário
-                                        child: Image.asset(
-                                            'assets/images/lipidios/acidos_graxos.png',
-                                            fit: BoxFit.cover,
-                                            width: double.infinity),
+                                        child: InteractiveViewer(
+                                          child: Image.asset(
+                                              'assets/images/lipidios/acidos_graxos.png',
+                                              fit: BoxFit.cover,
+                                              width: double.infinity),
+                                        ),
                                       ),
                                       SizedBox(
                                         height: 30,
@@ -435,7 +515,6 @@ class _LipidiosState extends State<Lipidios> {
                                                 color: Color(0xFF46171b)),
                                             textAlign: TextAlign.justify),
                                       ),
-                                      
                                     ],
                                   ),
                                 ),
@@ -446,7 +525,7 @@ class _LipidiosState extends State<Lipidios> {
                     ),
                   ),
                 ),
-
+              */
               // Seção 4
               if (showSection4)
                 Container(
@@ -458,8 +537,7 @@ class _LipidiosState extends State<Lipidios> {
                         SizedBox(
                           height: 30,
                         ),
-                        Text(
-                            'Já mencionamos que existem vários tipos de lipídios, cada um com características distintas e funções. Por exemplo, os fosfolipídios são essenciais na formação das membranas celulares.',
+                        Text('Reversibilidade',
                             style: TextStyle(
                                 fontFamily: 'Merriweather',
                                 fontSize: 14,
@@ -469,17 +547,53 @@ class _LipidiosState extends State<Lipidios> {
                         SizedBox(
                           height: 30,
                         ),
+                        Text(
+                            'Embora muitas reações catalisadas por enzimas sejam direcionais, muitas enzimas também podem catalisar reações em ambas as direções, dependendo das condições do ambiente celular',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary:
+                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                          ),
+                          onPressed: () {
+                            if (!showSection5) {
+                              _scrollToNextSection();
+                            }
+                          },
+                          child: Text('Próximo...',
+                              style: TextStyle(
+                                  fontFamily: 'Merriweather',
+                                  fontSize: 14,
+                                  height: 1.5,
+                                  color: Color(0xFF46171b)),
+                              textAlign: TextAlign.justify),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        )
+                        /*
                         ClipRRect(
                           borderRadius: BorderRadius.circular(
                               10.0), // Ajuste o raio conforme necessário
-                          child: Image.asset(
-                              'assets/images/lipidios/lipidios.png',
-                              fit: BoxFit.cover,
-                              width: double.infinity),
+                          child: InteractiveViewer(
+                            child: Image.asset(
+                                'assets/images/lipidios/lipidios.png',
+                                fit: BoxFit.cover,
+                                width: double.infinity),
+                          ),
                         ),
                         SizedBox(
                           height: 30,
                         ),
+                        
                         PerguntaComAlternativas03(
                           onRespostaCorreta: () {
                             _mostrarBotaoProximaSecao05();
@@ -489,6 +603,8 @@ class _LipidiosState extends State<Lipidios> {
                         SizedBox(
                           height: 30,
                         ),
+                        */
+                        /*
                         if (mostrarBotaoProximaSecao05)
                           Column(
                             children: [
@@ -522,10 +638,12 @@ class _LipidiosState extends State<Lipidios> {
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(
                                             10.0), // Ajuste o raio conforme necessário
-                                        child: Image.asset(
-                                            'assets/images/lipidios/fosfolipidio.png',
-                                            fit: BoxFit.cover,
-                                            width: double.infinity),
+                                        child: InteractiveViewer(
+                                          child: Image.asset(
+                                              'assets/images/lipidios/fosfolipidio.png',
+                                              fit: BoxFit.cover,
+                                              width: double.infinity),
+                                        ),
                                       ),
                                       SizedBox(
                                         height: 30,
@@ -557,6 +675,8 @@ class _LipidiosState extends State<Lipidios> {
                               )
                             ],
                           )
+
+                          */
                       ],
                     ),
                   ),
@@ -572,8 +692,262 @@ class _LipidiosState extends State<Lipidios> {
                         SizedBox(
                           height: 30,
                         ),
+                        Text('Regulação',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Text(
-                            'O metabolismo de lipídios que contém ácidos graxo envolve a quebra (catabolismo) de ácidos graxos para a produção de energia e a síntese (anabolismo) de lipídios quando necessário.',
+                            'A atividade enzimática é regulada de várias maneiras nas células. Pode ser controlada por fatores como a concentração do substrato, a presença de moléculas reguladoras e mudanças no ambiente celular.',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary:
+                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                          ),
+                          onPressed: () {
+                            if (!showSection6) {
+                              _scrollToNextSection();
+                            }
+                          },
+                          child: Text('Próximo...',
+                              style: TextStyle(
+                                  fontFamily: 'Merriweather',
+                                  fontSize: 14,
+                                  height: 1.5,
+                                  color: Color(0xFF46171b)),
+                              textAlign: TextAlign.justify),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              if (showSection6)
+                Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text('Desnaturação',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                            'As enzimas são sensíveis a mudanças extremas de temperatura e pH, o que pode alterar sua estrutura tridimensional e afetar sua capacidade de catalisar reações.',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary:
+                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                          ),
+                          onPressed: () {
+                            if (!showSection7) {
+                              _scrollToNextSection();
+                            }
+                          },
+                          child: Text('Próximo...',
+                              style: TextStyle(
+                                  fontFamily: 'Merriweather',
+                                  fontSize: 14,
+                                  height: 1.5,
+                                  color: Color(0xFF46171b)),
+                              textAlign: TextAlign.justify),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              if (showSection7)
+                Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text('Cofatores e coenzimas',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                            'Algumas enzimas requerem cofatores (íons metálicos) ou coenzimas (moléculas orgânicas não proteicas) para funcionar adequadamente',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary:
+                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                          ),
+                          onPressed: () {
+                            if (!showSection8) {
+                              _scrollToNextSection();
+                            }
+                          },
+                          child: Text('Próximo...',
+                              style: TextStyle(
+                                  fontFamily: 'Merriweather',
+                                  fontSize: 14,
+                                  height: 1.5,
+                                  color: Color(0xFF46171b)),
+                              textAlign: TextAlign.justify),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              if (showSection8)
+                Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Text(
+                            'Questão 01',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        PerguntaComAlternativas01(
+                          onRespostaCorreta: () {
+                            _mostrarBotaoProximaSecao09();
+                            rolarTelaUmPouco();
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              SizedBox(
+                height: 30,
+              ),
+              if (showSection9)
+                Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Text(
+                            'Questão 02',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        PerguntaComAlternativas02(
+                          onRespostaCorreta: () {
+                            _mostrarBotaoProximaSecao10();
+                            rolarTelaUmPouco();
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              SizedBox(
+                height: 30,
+              ),
+              if (showSection10)
+                Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Text(
+                            'Questão 03',
+                            style: TextStyle(
+                                fontFamily: 'Merriweather',
+                                fontSize: 14,
+                                height: 2.0,
+                                color: Colors.white),
+                            textAlign: TextAlign.justify),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        PerguntaComAlternativas03(
+                          onRespostaCorreta: () {
+                            _mostrarBotaoProximaSecao11();
+                            rolarTelaUmPouco();
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              SizedBox(
+                height: 30,
+              ),
+              if (showSection11)
+                Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Text(
+                            'Questão 04',
                             style: TextStyle(
                                 fontFamily: 'Merriweather',
                                 fontSize: 14,
@@ -585,68 +959,23 @@ class _LipidiosState extends State<Lipidios> {
                         ),
                         PerguntaComAlternativas04(
                           onRespostaCorreta: () {
-                            _mostrarBotaoProximaSecao06();
+                            _mostrarBotaoProximaFinal();
                             rolarTelaUmPouco();
                           },
                         ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        if (mostrarBotaoProximaSecao06)
-                          Column(
-                            children: [
-                              Container(
-                                child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                          'Exatamente! A beta-oxidação é o processo pelo qual os ácidos graxos provenientes de móleculas lipídicas são quebrados na mitocôndria a cada 2 carbonos para gerar energia na forma de ATP.',
-                                          style: TextStyle(
-                                              fontFamily: 'Merriweather',
-                                              fontSize: 14,
-                                              height: 2.0,
-                                              color: Colors.white),
-                                          textAlign: TextAlign.justify),
-                                      SizedBox(
-                                        height: 30,
-                                      ),
-                                      ElevatedButton(
-                                        style: ElevatedButton.styleFrom(
-                                          primary: Color(
-                                              0xFFa7e2dd), // Cor de fundo personalizada
-                                        ),
-                                        onPressed: () {
-                                          if (!showSection6) {
-                                            _scrollToNextSection();
-                                          }
-                                        },
-                                        child: Text('Próximo...',
-                                            style: TextStyle(
-                                                fontFamily: 'Merriweather',
-                                                fontSize: 14,
-                                                height: 1.5,
-                                                color: Color(0xFF46171b)),
-                                            textAlign: TextAlign.justify),
-                                      ),
-                                      SizedBox(
-                                        height: 30,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          )
                       ],
                     ),
                   ),
                 ),
-              if (showSection6)
+              SizedBox(
+                height: 30,
+              ),
+              if (showSectionFinal)
                 Container(
                   margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
                   child: Center(
-                    child: Text('Parabéns!!\n\nVocê chegou a fim desta lição!!\n\nFique de olho nas notificações do Professor para atualizar seu Aplicativo e aproveitar das novas lições que estão por vir!',
+                    child: Text(
+                        'Parabéns!!\n\nVocê chegou a fim desta lição!!\n\nFique de olho nas notificações do Professor para atualizar seu Aplicativo e aproveitar das novas lições que estão por vir!',
                         style: TextStyle(
                             fontFamily: 'Merriweather',
                             fontSize: 14,
@@ -655,9 +984,9 @@ class _LipidiosState extends State<Lipidios> {
                         textAlign: TextAlign.justify),
                   ),
                 ),
-                SizedBox(
-                          height: 100,
-                        ),
+              SizedBox(
+                height: 100,
+              ),
             ],
           ),
         ],
@@ -708,7 +1037,7 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
       child: Column(
         children: [
           Text(
-              'Qual das seguintes afirmações descreve corretamente a solubilidade dos lipídios em água?',
+              'Qual é o papel das enzimas nas reações químicas biológicas?',
               style: TextStyle(
                 fontFamily: 'Merriweather',
                 fontSize: 14,
@@ -716,7 +1045,7 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
               ),
               textAlign: TextAlign.justify),
           RadioListTile(
-            title: Text('Lipídios são solúveis em água',
+            title: Text('Inibir reações químicas',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -732,7 +1061,7 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
             },
           ),
           RadioListTile(
-            title: Text('Lipídios são insolúveis em água.',
+            title: Text('Acelerar reações químicas',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -749,7 +1078,7 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
           ),
           RadioListTile(
             title: Text(
-                'A solubilidade de lipídios em água varia dependendo do tipo de lipídio.',
+                'Tornar as reações químicas irreversíveis',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -757,6 +1086,23 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
                 ),
                 textAlign: TextAlign.justify),
             value: 3,
+            groupValue: respostaSelecionada,
+            onChanged: (value) {
+              setState(() {
+                respostaSelecionada = value as int;
+              });
+            },
+          ),
+          RadioListTile(
+            title: Text(
+                'Neutralizar reações químicas',
+                style: TextStyle(
+                  fontFamily: 'Merriweather',
+                  fontSize: 14,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.justify),
+            value: 4,
             groupValue: respostaSelecionada,
             onChanged: (value) {
               setState(() {
@@ -825,7 +1171,7 @@ class _PerguntaComAlternativas02State extends State<PerguntaComAlternativas02> {
       padding: EdgeInsets.all(16.0),
       child: Column(
         children: [
-          Text('Qual é uma das funções principais dos triglicerídeos?',
+          Text('O que significa a especificidade das enzimas em relação aos substratos?',
               style: TextStyle(
                 fontFamily: 'Merriweather',
                 fontSize: 14,
@@ -833,7 +1179,7 @@ class _PerguntaComAlternativas02State extends State<PerguntaComAlternativas02> {
               ),
               textAlign: TextAlign.justify),
           RadioListTile(
-            title: Text('Construção de membranas celulares',
+            title: Text('As enzimas podem atuar em qualquer substrato',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -849,7 +1195,7 @@ class _PerguntaComAlternativas02State extends State<PerguntaComAlternativas02> {
             },
           ),
           RadioListTile(
-            title: Text('Armazenamento de energia',
+            title: Text('As enzimas só atuam em um tipo específico de substrato',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -865,7 +1211,7 @@ class _PerguntaComAlternativas02State extends State<PerguntaComAlternativas02> {
             },
           ),
           RadioListTile(
-            title: Text('Transporte de oxigênio',
+            title: Text('As enzimas são indiferentes aos substratos',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -873,6 +1219,22 @@ class _PerguntaComAlternativas02State extends State<PerguntaComAlternativas02> {
                 ),
                 textAlign: TextAlign.justify),
             value: 3,
+            groupValue: respostaSelecionada,
+            onChanged: (value) {
+              setState(() {
+                respostaSelecionada = value as int;
+              });
+            },
+          ),
+          RadioListTile(
+            title: Text('As enzimas podem inativar diferentes substratos simultaneamente',
+                style: TextStyle(
+                  fontFamily: 'Merriweather',
+                  fontSize: 14,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.justify),
+            value: 4,
             groupValue: respostaSelecionada,
             onChanged: (value) {
               setState(() {
@@ -915,7 +1277,7 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
   String mensagemResposta = '';
 
   void verificarResposta() {
-    if (respostaSelecionada == 2) {
+    if (respostaSelecionada == 3) {
       mensagemResposta = 'Correta Resposta';
       widget.onRespostaCorreta();
     } else {
@@ -942,7 +1304,7 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
       child: Column(
         children: [
           Text(
-              'Olhe para a figura acima. Qual é uma característica distintiva dos fosfolipídios?',
+              'Como a temperatura extrema pode afetar as enzimas?',
               style: TextStyle(
                 fontFamily: 'Merriweather',
                 fontSize: 14,
@@ -950,7 +1312,7 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
               ),
               textAlign: TextAlign.justify),
           RadioListTile(
-            title: Text('São solúveis em água',
+            title: Text('Melhorar sua atividade',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -967,7 +1329,7 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
           ),
           RadioListTile(
             title: Text(
-                'Possuem duas caudas hidrofóbicas e uma cabeça hidrofílica',
+                'Não tem efeito sobre as enzimas',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -983,7 +1345,7 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
             },
           ),
           RadioListTile(
-            title: Text('São a principal fonte de energia',
+            title: Text('Desnaturar e inativar as enzimas',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -991,6 +1353,22 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
                 ),
                 textAlign: TextAlign.justify),
             value: 3,
+            groupValue: respostaSelecionada,
+            onChanged: (value) {
+              setState(() {
+                respostaSelecionada = value as int;
+              });
+            },
+          ),
+          RadioListTile(
+            title: Text('Estabilizar as enzimas',
+                style: TextStyle(
+                  fontFamily: 'Merriweather',
+                  fontSize: 14,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.justify),
+            value: 4,
             groupValue: respostaSelecionada,
             onChanged: (value) {
               setState(() {
@@ -1033,7 +1411,7 @@ class _PerguntaComAlternativas04State extends State<PerguntaComAlternativas04> {
   String mensagemResposta = '';
 
   void verificarResposta() {
-    if (respostaSelecionada == 3) {
+    if (respostaSelecionada == 4) {
       mensagemResposta = 'Correta Resposta';
       widget.onRespostaCorreta();
     } else {
@@ -1060,7 +1438,7 @@ class _PerguntaComAlternativas04State extends State<PerguntaComAlternativas04> {
       child: Column(
         children: [
           Text(
-              'Qual das três opções a seguir você acredita ser o processo pelo qual os ácidos graxos são quebrados para produzir energia?',
+              'O que são cofatores e coenzimas em relação às enzimas?',
               style: TextStyle(
                 fontFamily: 'Merriweather',
                 fontSize: 14,
@@ -1068,7 +1446,7 @@ class _PerguntaComAlternativas04State extends State<PerguntaComAlternativas04> {
               ),
               textAlign: TextAlign.justify),
           RadioListTile(
-            title: Text('Glicólise',
+            title: Text('Substratos específicos',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -1084,7 +1462,7 @@ class _PerguntaComAlternativas04State extends State<PerguntaComAlternativas04> {
             },
           ),
           RadioListTile(
-            title: Text('Lipogênese',
+            title: Text('Produtos finais da catálise',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -1100,7 +1478,7 @@ class _PerguntaComAlternativas04State extends State<PerguntaComAlternativas04> {
             },
           ),
           RadioListTile(
-            title: Text('Beta-oxidação',
+            title: Text('Moléculas reguladoras',
                 style: TextStyle(
                   fontFamily: 'Merriweather',
                   fontSize: 14,
@@ -1108,6 +1486,22 @@ class _PerguntaComAlternativas04State extends State<PerguntaComAlternativas04> {
                 ),
                 textAlign: TextAlign.justify),
             value: 3,
+            groupValue: respostaSelecionada,
+            onChanged: (value) {
+              setState(() {
+                respostaSelecionada = value as int;
+              });
+            },
+          ),
+          RadioListTile(
+            title: Text('Moléculas auxiliares essenciais para a atividade enzimática',
+                style: TextStyle(
+                  fontFamily: 'Merriweather',
+                  fontSize: 14,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.justify),
+            value: 4,
             groupValue: respostaSelecionada,
             onChanged: (value) {
               setState(() {

@@ -1,5 +1,6 @@
 import 'package:app_bioquimica/flashcards/constantes.dart';
 import 'package:app_bioquimica/pages/home.page.dart';
+import 'package:app_bioquimica/studyguided/enzimas.dart';
 import 'package:app_bioquimica/studyguided/lipidios.dart';
 import 'package:flutter/material.dart';
 
@@ -98,6 +99,54 @@ class EstudoGuiado extends StatelessWidget {
                         PageRouteBuilder(
                           pageBuilder: (context, animation, secondaryAnimation) {
                             return Lipidios();
+                          },
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                            const begin = Offset(1.0, 0.0);
+                            const end = Offset.zero;
+                            const curve = Curves.ease;
+                            var tween = Tween(begin: begin, end: end)
+                                .chain(CurveTween(curve: curve));
+                            var offsetAnimation = animation.drive(tween);
+
+                            return SlideTransition(
+                              position: offsetAnimation,
+                              child: child,
+                            );
+                          },
+                          transitionDuration: Duration(milliseconds: 1500),
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextButton.icon(
+                    icon:
+                        const Icon(Icons.book_outlined, color: Color(0xFF2b1d0e)),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 10, right: 40),
+                      alignment: Alignment.centerLeft,
+                      minimumSize: Size(250, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Color(0xFFF2D6BD),
+                    ),
+                    label: const Text(
+                      "Enzimas",
+                      style: TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 12,
+                          color: Color(0xFF2b1d0e)),
+                      textAlign: TextAlign.left,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation, secondaryAnimation) {
+                            return Enzimas();
                           },
                           transitionsBuilder:
                               (context, animation, secondaryAnimation, child) {
