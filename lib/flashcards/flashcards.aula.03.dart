@@ -43,7 +43,7 @@ class _FlashCards03State extends State<FlashCards03> {
               SizedBox(
                 width: 20,
               ),
-              const Text("BL01 - Aminoácido e Proteínas",
+              const Text("BL01",
                   style: TextStyle(
                       fontFamily: 'Merriweather',
                       fontSize: 18,
