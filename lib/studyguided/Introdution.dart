@@ -174,7 +174,7 @@ class _IntrodutionState extends State<Introdution> {
                             ),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                primary: Color(
+                                backgroundColor: Color(
                                     0xFFa7e2dd), // Cor de fundo personalizada
                               ),
                               onPressed: () {
@@ -226,7 +226,7 @@ class _IntrodutionState extends State<Introdution> {
                         if (mostrarBotaoProximaSecao03)
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: Color(
+                              backgroundColor: Color(
                                   0xFFa7e2dd), // Cor de fundo personalizada
                             ),
                             onPressed: () {
@@ -275,7 +275,7 @@ class _IntrodutionState extends State<Introdution> {
                         if (mostrarBotaoProximaSecao04)
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: Color(
+                              backgroundColor: Color(
                                   0xFFa7e2dd), // Cor de fundo personalizada
                             ),
                             onPressed: () {
@@ -418,7 +418,7 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.white, // Cor de fundo personalizada
+              backgroundColor: Colors.white, // Cor de fundo personalizada
             ),
             onPressed: verificarResposta,
             child: Text('Check Answer',
@@ -534,7 +534,7 @@ class _PerguntaComAlternativas02State extends State<PerguntaComAlternativas02> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.white, // Cor de fundo personalizada
+              backgroundColor: Colors.white, // Cor de fundo personalizada
             ),
             onPressed: verificarResposta,
             child: Text('Check Answer',
@@ -651,7 +651,7 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.white, // Cor de fundo personalizada
+              backgroundColor: Colors.white, // Cor de fundo personalizada
             ),
             onPressed: verificarResposta,
             child: Text('Check Answer',
@@ -718,7 +718,7 @@ class _CommentSection01State extends State<CommentSection01> {
       ),
       ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Color(0xFFa7e2dd), // Cor de fundo personalizada
+          backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
         ),
         onPressed: () {
           if (!showSection2) {

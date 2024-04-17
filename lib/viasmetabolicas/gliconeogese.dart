@@ -712,8 +712,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                            backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
                             if (!showSection3) {
@@ -839,8 +838,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                            backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
                             if (!showSection5) {
@@ -966,8 +964,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                            backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
                             if (!showSection7) {
@@ -1093,8 +1090,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                            backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
                             if (!showSection9) {
@@ -1220,8 +1216,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                         
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                            backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
                             if (!showSection11) {
@@ -1349,8 +1344,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                         
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                            backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
                             if (!showSection13) {
@@ -1477,8 +1471,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                            backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
                             if (!showSection15) {
@@ -1604,8 +1597,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                            backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
                             if (!showSection17) {
@@ -1731,8 +1723,7 @@ class _MinhaPaginaState extends State<MinhaPagina> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
-                                Color(0xFFa7e2dd), // Cor de fundo personalizada
+                            backgroundColor: Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
                             if (!showSection19) {

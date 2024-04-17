@@ -122,7 +122,7 @@ class _FlashCards03State extends State<FlashCards03> {
                         ),
                         label: const Text(""),
                         style: ElevatedButton.styleFrom(
-                            primary: const Color(0xFFF2D6BD),
+                            backgroundColor: const Color(0xFFF2D6BD),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             padding: const EdgeInsets.only(
@@ -139,7 +139,7 @@ class _FlashCards03State extends State<FlashCards03> {
                         ),
                         label: const Text(""),
                         style: ElevatedButton.styleFrom(
-                            primary: const Color(0xFFF2D6BD),
+                            backgroundColor: const Color(0xFFF2D6BD),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             padding: const EdgeInsets.only(

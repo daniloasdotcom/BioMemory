@@ -261,7 +261,7 @@ class _EnzimasState extends State<Enzimas> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary:
+                          backgroundColor:
                               Color(0xFFa7e2dd), // Cor de fundo personalizada
                         ),
                         onPressed: () {
@@ -319,7 +319,7 @@ class _EnzimasState extends State<Enzimas> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
+                            backgroundColor:
                                 Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
@@ -395,7 +395,7 @@ class _EnzimasState extends State<Enzimas> {
                                       ),
                                       ElevatedButton(
                                         style: ElevatedButton.styleFrom(
-                                          primary: Color(
+                                          backgroundColor: Color(
                                               0xFFa7e2dd), // Cor de fundo personalizada
                                         ),
                                         onPressed: () {
@@ -499,7 +499,7 @@ class _EnzimasState extends State<Enzimas> {
                                       ),
                                       ElevatedButton(
                                         style: ElevatedButton.styleFrom(
-                                          primary: Color(
+                                          backgroundColor: Color(
                                               0xFFa7e2dd), // Cor de fundo personalizada
                                         ),
                                         onPressed: () {
@@ -560,7 +560,7 @@ class _EnzimasState extends State<Enzimas> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
+                            backgroundColor:
                                 Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
@@ -650,7 +650,7 @@ class _EnzimasState extends State<Enzimas> {
                                       ),
                                       ElevatedButton(
                                         style: ElevatedButton.styleFrom(
-                                          primary: Color(
+                                          backgroundColor: Color(
                                               0xFFa7e2dd), // Cor de fundo personalizada
                                         ),
                                         onPressed: () {
@@ -715,7 +715,7 @@ class _EnzimasState extends State<Enzimas> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
+                            backgroundColor:
                                 Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
@@ -771,7 +771,7 @@ class _EnzimasState extends State<Enzimas> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
+                            backgroundColor:
                                 Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
@@ -827,7 +827,7 @@ class _EnzimasState extends State<Enzimas> {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary:
+                            backgroundColor:
                                 Color(0xFFa7e2dd), // Cor de fundo personalizada
                           ),
                           onPressed: () {
@@ -1112,7 +1112,7 @@ class _PerguntaComAlternativas01State extends State<PerguntaComAlternativas01> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.white, // Cor de fundo personalizada
+              backgroundColor: Colors.white, // Cor de fundo personalizada
             ),
             onPressed: verificarResposta,
             child: Text('Verificar Resposta',
@@ -1244,7 +1244,7 @@ class _PerguntaComAlternativas02State extends State<PerguntaComAlternativas02> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.white, // Cor de fundo personalizada
+              backgroundColor: Colors.white, // Cor de fundo personalizada
             ),
             onPressed: verificarResposta,
             child: Text('Verificar resposta',
@@ -1378,7 +1378,7 @@ class _PerguntaComAlternativas03State extends State<PerguntaComAlternativas03> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.white, // Cor de fundo personalizada
+              backgroundColor: Colors.white, // Cor de fundo personalizada
             ),
             onPressed: verificarResposta,
             child: Text('Verificar Resposta',
@@ -1511,7 +1511,7 @@ class _PerguntaComAlternativas04State extends State<PerguntaComAlternativas04> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Colors.white, // Cor de fundo personalizada
+              backgroundColor: Colors.white, // Cor de fundo personalizada
             ),
             onPressed: verificarResposta,
             child: Text('Verificar Resposta',
