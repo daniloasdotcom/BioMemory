@@ -1,3 +1,6 @@
+
+![Biomemory](/assets/images/biomemory.jpg)
+
 # BioMemory
 
 BioMemory is an application designed to assist students of biochemistry in their studies by utilizing flashcards and memory testing techniques. Whether you're preparing for an exam or simply want to reinforce your understanding of key concepts, BioMemory provides a convenient platform to enhance your learning experience.
